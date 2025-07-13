@@ -1,14 +1,13 @@
-import NavBar from "./components/NavBar";
-import Hero from "./sections/Hero";
-import ShowcaseSection from "./sections/ShowcaseSection";
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 const App = () => {
   return (
-    <>
-      <NavBar />
-      <Hero />
-      <ShowcaseSection />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
+    </Routes>
   );
 };
 

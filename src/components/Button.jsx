@@ -1,31 +1,9 @@
-import { FaCode, FaArrowDown } from "react-icons/fa";
-
-const Button = ({ text, className, id }) => {
+const Button = ({ text, className, children, btnMargin, onclick }) => {
   return (
-    <a
-      onClick={(e) => {
-        e.preventDefault();
-
-        const target = document.getElementById("counter");
-
-        if (target && id) {
-          const offset = window.innerWidth * 0.15;
-          const top =
-            target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({
-            top: top,
-            behavior: "smooth",
-          });
-        }
-      }}
-      className={`${className ?? ""} cta-wrapper`}
-    >
-      <div className="cta-button group">
+    <a onClick={onclick} className={`${className ?? ""} cta-wrapper`}>
+      <div className={`cta-button group ${btnMargin}`}>
         <div className="bg-circle" />
-        <span className="icon-prefix">
-          <FaCode className="icon-code" />
-          <FaArrowDown className="icon-arrow" />
-        </span>
+        {children}
         <p className="text">{text}</p>
       </div>
     </a>

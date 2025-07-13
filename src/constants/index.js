@@ -41,6 +41,149 @@ const counterItems = [
   { value: 12, suffix: "x", label: "Hackthon Winner" },
 ];
 
+const projects = [
+  {
+    title: "PolyChat — Language Learning Social Platform",
+    description:
+      "PolyChat helps users connect globally to practice languages via real-time chat and video, enabling authentic conversations with native speakers.",
+    image: "/images/projects/polyproject.png",
+    github: "https://github.com/Dileep2896/PolyChat",
+    demo: "https://polychat.vercel.app/",
+    tech: ["React", "Express", "MongoDB", "Zustand", "Stream SDK"],
+    bg: "bg-[#fff]",
+  },
+  {
+    title: "Soocily — Social Media App (Flutter)",
+    description:
+      "A fully functional social media application built with Flutter to explore advanced architecture and state management.",
+    image: "/images/projects/soocily.png",
+    github: "https://github.com/Dileep2896/soocily",
+    demo: null,
+    tech: ["Flutter", "Firebase", "Bloc"],
+    bg: "bg-[#e5f2fc]",
+  },
+  {
+    title: "Interviewer — Real-Time Interview Practice Tool",
+    description:
+      "A web tool for simulating technical interviews with timed, randomized questions and real-time feedback.",
+    image: "/images/projects/interviewer.png",
+    github: "https://github.com/Dileep2896/interviewer",
+    demo: "https://interviewer-demo.vercel.app/",
+    tech: ["Next.js", "React", "Node.js", "MongoDB"],
+    bg: "bg-[#b8bfdd]",
+  },
+  {
+    title: "Good Deeds — Community-Focused Marketplace",
+    description:
+      "A marketplace connecting newcomers and locals to build trust-based service networks.",
+    image: "/images/projects/gooddeeds.png",
+    github: "https://github.com/Dileep2896/Hackathon",
+    demo: null,
+    tech: ["Flutter", "Firebase", "Node.js"],
+    bg: "bg-[#bed5f0]",
+  },
+  {
+    title: "Spotify Clone — Flutter Mobile Application",
+    description:
+      "A cross-platform clone of Spotify demonstrating media streaming, backend APIs, and mobile UI.",
+    image: "/images/projects/spotify_clone.png",
+    github: "https://github.com/Dileep2896/spotify_clone",
+    demo: null,
+    tech: ["Flutter", "Firebase", "REST APIs"],
+    bg: "bg-[#f2f2f2]",
+  },
+  {
+    title: "TaskNexus — Project Management Application",
+    description:
+      "A full-featured platform for tracking and managing collaborative projects efficiently.",
+    image: "/images/projects/project.png",
+    github: "https://github.com/Dileep2896/TaskNexus",
+    demo: null,
+    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    bg: "bg-[#e9ecf5]",
+  },
+  {
+    title: "DocuMate — Collaborative Doc Editor",
+    description:
+      "Real-time collaborative document editing platform with live updates and multi-user support.",
+    image: "/images/projects/documate.png",
+    github: "https://github.com/Dileep2896/documate",
+    demo: null,
+    tech: ["React", "Quill.js", "Socket.io", "Node.js"],
+    bg: "bg-[#f7faff]",
+  },
+  {
+    title: "GadgetBay — Inventory Management System",
+    description:
+      "Web application for managing gadgets inventory, including analytics, purchases, and expenses.",
+    image: "/images/projects/gadgetbay.png",
+    github: "https://github.com/Dileep2896/GadgetBay",
+    demo: null,
+    tech: ["React", "Node.js", "MongoDB", "Chart.js"],
+    bg: "bg-[#edf1f6]",
+  },
+  {
+    title: "Split — Full-Stack Expense Splitter",
+    description:
+      "Flutter-based mobile app for splitting expenses among friends using Firebase.",
+    image: "/images/projects/split.png",
+    github: "https://github.com/Dileep2896/split",
+    demo: null,
+    tech: ["Flutter", "Firebase", "Cloud Firestore"],
+    bg: "bg-[#e0f4f8]",
+  },
+  {
+    title: "TalkBot — OpenAI Chatbot App",
+    description:
+      "A full-stack MERN chatbot that integrates OpenAI’s API for intelligent conversations.",
+    image: "/images/projects/talkbot.png",
+    github: "https://github.com/Dileep2896/ai-chat-bot",
+    demo: null,
+    tech: ["React", "Express", "MongoDB", "OpenAI API"],
+    bg: "bg-[#cde2f3]",
+  },
+  {
+    title: "The Almost Final Countdown — Timer Game",
+    description:
+      "A simple React game that tests your timing precision against countdowns.",
+    image: "/images/projects/timer_game.png",
+    github: "https://github.com/Dileep2896/react-timer-game",
+    demo: null,
+    tech: ["React", "JavaScript", "Hooks"],
+    bg: "bg-[#e4ebfa]",
+  },
+  {
+    title: "GymGrit — Fitness Web App",
+    description:
+      "A modern platform for gym enthusiasts and trainers to manage workouts and schedules.",
+    image: "/images/projects/gymgrit.png",
+    github: "https://github.com/Dileep2896/react-gymgrit",
+    demo: null,
+    tech: ["React", "Tailwind CSS", "ExerciseDB API"],
+    bg: "bg-[#f0f4f9]",
+  },
+  {
+    title: "Flutter Chat App",
+    description:
+      "A real-time Flutter + Firebase chat app with bonus features like music sync during chats.",
+    image: "/images/projects/flutter_chat_app.png",
+    github: "https://github.com/Dileep2896/chat_app",
+    demo: null,
+    tech: ["Flutter", "Firebase", "Realtime Database"],
+    bg: "bg-[#e2f0ff]",
+  },
+  {
+    title: "NASA Astronomy Picture of the Day",
+    description:
+      "Displays NASA’s daily APOD with descriptions using their public API.",
+    image: "/images/projects/Nasa.png",
+    github: "https://github.com/Dileep2896/reactjs-nasa",
+    demo: null,
+    tech: ["React", "NASA API", "Tailwind"],
+    bg: "bg-[#dbe8ff]",
+  },
+];
+
 const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-1.png",
@@ -208,67 +351,18 @@ const expLogos = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
-  },
-  {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
-  },
-  {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
-  },
-];
-
 const socialImgs = [
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
+    name: "github",
     imgPath: "/images/fb.png",
-  },
-  {
-    name: "x",
-    imgPath: "/images/x.png",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+  },
+  {
+    name: "insta",
+    imgPath: "/images/insta.png",
   },
 ];
 
@@ -279,9 +373,9 @@ export {
   counterItems,
   expCards,
   expLogos,
-  testimonials,
   socialImgs,
   techStackIcons,
   techStackImgs,
   navLinks,
+  projects,
 };

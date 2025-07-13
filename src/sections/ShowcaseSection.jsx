@@ -2,10 +2,15 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Button from "../components/Button";
+import { FaEye, FaFolderOpen } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
+  const navigate = useNavigate();
+
   const sectionRef = useRef(null);
   const project1Ref = useRef(null);
   const project2Ref = useRef(null);
@@ -61,9 +66,10 @@ const ShowcaseSection = () => {
                 </a>
               </h2>
               <p className="text-white-50 md:text-xl">
-                PolyChat is built with the MERN stack, featuring real-time chat,
-                interactive feeds, and a modern UI using Tailwind CSS and
-                Socket.io.
+                A real-time language exchange platform built with React.js
+                (Vite), Express.js, and MongoDB. Features include authenticated
+                chat/video using Stream SDKs, state management with Zustand, and
+                a responsive UI with Tailwind CSS + DaisyUI.
               </p>
             </div>
           </div>
@@ -98,6 +104,18 @@ const ShowcaseSection = () => {
             </div>
           </div>
         </div>
+        <Button
+          hideIcon={true}
+          text={"Check out more"}
+          btnMargin={"mt-5 xl:mt-0"}
+          onclick={() => navigate("/projects")}
+          children={
+            <span className="icon-prefix">
+              <FaFolderOpen className="icon-one" />
+              <FaEye className="icon-two" />
+            </span>
+          }
+        />
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import HeroExperience from "../components/HeroModels/HeroExperience";
 import { useGSAP } from "@gsap/react";
 import gasp from "gsap";
 import AnimateCounter from "../components/AnimateCounter";
+import { FaArrowDown, FaCode } from "react-icons/fa";
 
 const Hero = () => {
   useGSAP(() => {
@@ -25,9 +26,6 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      {/* <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
-      </div> */}
       <div className="hero-layout">
         {/* LEFT: HERO CONTENT */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
@@ -37,9 +35,9 @@ const Hero = () => {
                 Building
                 <span className="slide">
                   <span className="wrapper">
-                    {words.map((word) => (
+                    {words.map((word, index) => (
                       <span
-                        key={word}
+                        key={index}
                         className="flex items-center md:gap-3 gap-1 pb-2"
                       >
                         <span>{word}</span>
@@ -58,8 +56,30 @@ const Hero = () => {
             </p>
             <Button
               className="md:w-100 md:h-16 w-90 h-12"
-              id="button"
               text="Code that tells my story"
+              onclick={(e) => {
+                e.preventDefault();
+
+                const target = document.getElementById("counter");
+
+                if (target && "button") {
+                  const offset = window.innerWidth * 0.15;
+                  const top =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    offset;
+                  window.scrollTo({
+                    top: top,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              children={
+                <span className="icon-prefix">
+                  <FaCode className="icon-one" />
+                  <FaArrowDown className="icon-two" />
+                </span>
+              }
             />
           </div>
         </header>
