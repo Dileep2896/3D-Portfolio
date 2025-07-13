@@ -423,11 +423,13 @@ section {
   width: 2px;
   background: linear-gradient(
     0deg,
-    rgba(69, 222, 196, 0) 0%,
-    #62e0ff 25%,
-    #52aeff 37.51%,
-    #fd5c79 62.83%,
-    #6d45ce 92.91%
+    rgba(255, 102, 0, 0) 0%,
+    #25d6ff 20%,
+    #0066cc 30%,
+    #8753ff 50%,
+    #3ccbcf 70%,
+    #ff6600 90%,
+    rgba(255, 102, 0, 0) 100%
   );
 }
 
@@ -485,7 +487,7 @@ section {
   transition: border-color 1s ease-in-out;
 }
 
-.card::before {
+/* .card::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -508,6 +510,30 @@ section {
   mask-clip: padding-box, border-box;
   opacity: 0;
   transition: 0.5s ease;
+} */
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from calc(var(--start, 0deg) * 1deg),
+    transparent 0deg,
+    transparent 80deg,
+    white 100deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(4px);
 }
 
 .glow {

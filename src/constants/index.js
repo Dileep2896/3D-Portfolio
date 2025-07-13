@@ -1,3 +1,5 @@
+import { FaCode, FaRocket, FaClock } from "react-icons/fa";
+
 const navLinks = [
   {
     name: "Work",
@@ -184,57 +186,24 @@ const projects = [
   },
 ];
 
-const logoIconsList = [
-  {
-    imgPath: "/images/logos/company-logo-1.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-2.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-3.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-4.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-5.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-6.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-7.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-8.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-9.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-10.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-11.png",
-  },
-];
-
 const abilities = [
   {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    icon: FaCode,
+    title: "Engineering Precision",
+    desc: "Writing clean, scalable code across web and mobile, with performance and readability in mind.",
+    iconColor: "text-sky-300",
   },
   {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    icon: FaRocket,
+    title: "Builder Mentality",
+    desc: "From hackathons to startups — I take full ownership and turn ideas into real, working products.",
+    iconColor: "text-rose-300",
   },
   {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    icon: FaClock,
+    title: "Consistent Delivery",
+    desc: "I ship fast, iterate quickly, and always meet deadlines without compromising quality.",
+    iconColor: "text-amber-300",
   },
 ];
 
@@ -297,41 +266,67 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+      "Dileep brought research-level rigor and engineering discipline to our VR simulation platform. His AI-driven learning module made the experience truly adaptive.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Research Assistant, RIT",
+    date: "Aug 2024 – Present",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Built immersive VR simulations in Unity with C#, increasing interactivity by 35%.",
+      "Reduced feedback processing latency by 40% via real-time analytics pipelines.",
+      "Developed a reinforcement learning-powered adaptive training module, improving retention by 25%.",
     ],
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "Dileep's leadership in building our EV platform from scratch was invaluable. His full-stack execution helped us raise funding and validate our idea quickly.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Founder – Software Engineer, EVon Energy",
+    date: "Aug 2022 – Jul 2023",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Spearheaded a 6-member team to build a unified EV charging app, expanding access by 30%.",
+      "Raised $15K and achieved a $1.5M valuation during MVP launch.",
+      "Built the app using Flutter, AWS Amplify, and PostgreSQL/PostGIS, with real-time charger updates via OCPP.",
     ],
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "Dileep’s Flutter implementation improved both performance and user experience. His strategic optimizations had a noticeable impact on product quality.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    title: "Flutter Developer Intern, Impactional",
+    date: "Jan 2022 – Apr 2022",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Integrated Chess.com API with BLoC-managed UI, increasing responsiveness by 40%.",
+      "Ported Unity apps to Flutter via Dart FFI, reducing build times by 60%.",
+      "Enhanced UX across products, resulting in a 25% boost in user retention.",
+    ],
+  },
+  {
+    review:
+      "Dileep’s Android expertise was a major asset. His work on performance, UI, and real-time features helped us secure funding for future development.",
+    imgPath: "/images/exp4.png",
+    logoPath: "/images/logo4.png",
+    title: "Android Developer Intern, Hilspade",
+    date: "Sept 2021 – Jan 2022",
+    responsibilities: [
+      "Built a real-time sports tracking Android app using Java, Room DB, and RxJava.",
+      "Improved app performance by 20% and supported gameplay data from camera sensors.",
+      "Helped secure funding with a working MVP demonstrating player tracking.",
+    ],
+  },
+  {
+    review:
+      "Dileep brought full-stack thinking to our consulting team. His improvements to automation and UI responsiveness greatly streamlined internal workflows.",
+    imgPath: "/images/exp5.png",
+    logoPath: "/images/logo5.png",
+    title: "Software Engineering Intern, Pranamitra Consulting",
+    date: "Jul 2021 – Nov 2021",
+    responsibilities: [
+      "Automated AWS Lambda-based profile workflows, cutting manual tasks by 40%.",
+      "Improved Elasticsearch query performance by 25% via API and backend tuning.",
+      "Collaborated with designers to revamp the frontend using React, Redux, and Material-UI.",
     ],
   },
 ];
@@ -348,6 +343,14 @@ const expLogos = [
   {
     name: "logo3",
     imgPath: "/images/logo3.png",
+  },
+  {
+    name: "logo4",
+    imgPath: "/images/logo4.png",
+  },
+  {
+    name: "logo5",
+    imgPath: "/images/logo5.png",
   },
 ];
 
@@ -369,7 +372,6 @@ const socialImgs = [
 export {
   words,
   abilities,
-  logoIconsList,
   counterItems,
   expCards,
   expLogos,
