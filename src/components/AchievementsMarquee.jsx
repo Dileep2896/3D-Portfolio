@@ -22,11 +22,11 @@ const AchievementsMarquee = ({ imageList, title }) => {
 
         <div className="marquee h-[150px] sm:h-[170px] md:h-[200px]">
           <div className="marquee-box md:gap-12 gap-5">
-            {imageList.map((img) => (
-              <ImageIcon key={img.name} icon={img} />
+            {imageList.map((img, index) => (
+              <ImageIcon key={index} icon={img} />
             ))}
-            {imageList.map((img) => (
-              <ImageIcon key={img.name} icon={img} />
+            {imageList.map((img, index) => (
+              <ImageIcon key={index} icon={img} />
             ))}
           </div>
         </div>

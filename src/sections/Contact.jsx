@@ -24,14 +24,15 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        import.meta.env.APP_EMAILJS_SERVICE_ID,
-        import.meta.env.APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        import.meta.env.APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
       // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
+      setLoading(false);
     } catch (error) {
       console.error("EmailJS Error:", error); // Optional: show toast
     } finally {
