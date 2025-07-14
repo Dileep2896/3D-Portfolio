@@ -1,4 +1,19 @@
 import { FaCode, FaRocket, FaClock } from "react-icons/fa";
+import {
+  FaUniversity,
+  FaBrain,
+  FaVrCardboard,
+  FaBolt,
+  FaChargingStation,
+  FaGamepad,
+  FaMobileAlt,
+  FaChartLine,
+  FaRunning,
+  FaAndroid,
+  FaHeart,
+  FaUsers,
+  FaLaptopCode,
+} from "react-icons/fa";
 
 const navLinks = [
   {
@@ -232,41 +247,46 @@ const techStackImgs = [
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "Frontend",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
+    position: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
+    name: "Cross-Platform",
+    modelPath: "/models/Flutter.glb",
+    scale: 30,
     rotation: [0, 0, 0],
+    position: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
+    name: "Backend",
     modelPath: "/models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
+    position: [0, 0, 0],
   },
   {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
+    name: "Native",
+    modelPath: "/models/android_logo.glb",
+    scale: 2,
     rotation: [0, 0, 0],
+    position: [0, 0, 0],
   },
   {
-    name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
+    name: "Cloud",
+    modelPath: "/models/aws.glb",
+    scale: 0.4,
+    rotation: [0, 0, 0],
+    position: [0, -2, 0],
   },
 ];
 
 const expCards = [
   {
     review:
-      "Dileep brought research-level rigor and engineering discipline to our VR simulation platform. His AI-driven learning module made the experience truly adaptive.",
+      "RIT (Rochester Institute of Technology) is a renowned research university recognized for its innovation in computing, engineering, and immersive technologies.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
     title: "Research Assistant, RIT",
@@ -276,10 +296,11 @@ const expCards = [
       "Reduced feedback processing latency by 40% via real-time analytics pipelines.",
       "Developed a reinforcement learning-powered adaptive training module, improving retention by 25%.",
     ],
+    icons: [FaUniversity, FaBrain, FaVrCardboard],
   },
   {
     review:
-      "Dileep's leadership in building our EV platform from scratch was invaluable. His full-stack execution helped us raise funding and validate our idea quickly.",
+      "EVon Energy is a mobility-tech startup focused on simplifying electric vehicle charging by building scalable infrastructure and real-time navigation tools.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
     title: "Founder – Software Engineer, EVon Energy",
@@ -289,10 +310,11 @@ const expCards = [
       "Raised $15K and achieved a $1.5M valuation during MVP launch.",
       "Built the app using Flutter, AWS Amplify, and PostgreSQL/PostGIS, with real-time charger updates via OCPP.",
     ],
+    icons: [FaBolt, FaChargingStation, FaRocket],
   },
   {
     review:
-      "Dileep’s Flutter implementation improved both performance and user experience. His strategic optimizations had a noticeable impact on product quality.",
+      "Impactional Games is a software development company specializing in building interactive gaming applications and digital products for external clients.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
     title: "Flutter Developer Intern, Impactional",
@@ -302,10 +324,11 @@ const expCards = [
       "Ported Unity apps to Flutter via Dart FFI, reducing build times by 60%.",
       "Enhanced UX across products, resulting in a 25% boost in user retention.",
     ],
+    icons: [FaGamepad, FaMobileAlt, FaCode],
   },
   {
     review:
-      "Dileep’s Android expertise was a major asset. His work on performance, UI, and real-time features helped us secure funding for future development.",
+      "Hilspade is a sports analytics startup delivering real-time statistical insights for badminton players, enhancing gameplay analysis and performance tracking.",
     imgPath: "/images/exp4.png",
     logoPath: "/images/logo4.png",
     title: "Android Developer Intern, Hilspade",
@@ -315,10 +338,11 @@ const expCards = [
       "Improved app performance by 20% and supported gameplay data from camera sensors.",
       "Helped secure funding with a working MVP demonstrating player tracking.",
     ],
+    icons: [FaChartLine, FaRunning, FaAndroid],
   },
   {
     review:
-      "Dileep brought full-stack thinking to our consulting team. His improvements to automation and UI responsiveness greatly streamlined internal workflows.",
+      "Pranamitra Consulting is a matchmaking startup offering matrimonial web platforms that connect individuals across India through data-driven compatibility systems.",
     imgPath: "/images/exp5.png",
     logoPath: "/images/logo5.png",
     title: "Software Engineering Intern, Pranamitra Consulting",
@@ -328,6 +352,7 @@ const expCards = [
       "Improved Elasticsearch query performance by 25% via API and backend tuning.",
       "Collaborated with designers to revamp the frontend using React, Redux, and Material-UI.",
     ],
+    icons: [FaHeart, FaUsers, FaLaptopCode],
   },
 ];
 

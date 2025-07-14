@@ -18,6 +18,7 @@ const AnimateCounter = () => {
                 suffix={item.suffix}
                 prefix={item.prefix}
                 end={item.value}
+                startVal={0}
                 decimals={Number.isInteger(item.value) ? 0 : 2}
                 enableScrollSpy={true}
                 scrollSpyOnce={true}

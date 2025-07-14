@@ -4,7 +4,7 @@ import HeroExperience from "../components/HeroModels/HeroExperience";
 import { useGSAP } from "@gsap/react";
 import gasp from "gsap";
 import AnimateCounter from "../components/AnimateCounter";
-import { FaArrowDown, FaCode } from "react-icons/fa";
+import { FaArrowDown, FaChartLine } from "react-icons/fa";
 
 const Hero = () => {
   useGSAP(() => {
@@ -56,7 +56,7 @@ const Hero = () => {
             </p>
             <Button
               className="md:w-100 md:h-16 w-90 h-12"
-              text="Code that tells my story"
+              text="Stats that tells my story"
               onclick={(e) => {
                 e.preventDefault();
 
@@ -76,7 +76,7 @@ const Hero = () => {
               }}
               children={
                 <span className="icon-prefix">
-                  <FaCode className="icon-one" />
+                  <FaChartLine className="icon-one" />
                   <FaArrowDown className="icon-two" />
                 </span>
               }
