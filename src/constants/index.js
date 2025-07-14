@@ -15,6 +15,8 @@ import {
   FaLaptopCode,
 } from "react-icons/fa";
 
+import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
+
 const navLinks = [
   {
     name: "Work",
@@ -437,18 +439,21 @@ const expLogos = [
   },
 ];
 
-const socialImgs = [
+const socialIcons = [
   {
     name: "github",
-    imgPath: "/images/fb.png",
+    Icon: FaGithub,
+    link: "https://github.com/Dileep2896",
   },
   {
     name: "linkedin",
-    imgPath: "/images/linkedin.png",
+    Icon: FaLinkedin,
+    link: "https://www.linkedin.com/in/dileep2896/",
   },
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
+    name: "resume",
+    Icon: FaFileAlt,
+    link: "https://s3-personal-bucket.s3.amazonaws.com/Resume.pdf",
   },
 ];
 
@@ -459,7 +464,7 @@ export {
   hackathonImgList,
   expCards,
   expLogos,
-  socialImgs,
+  socialIcons,
   techImgList,
   techStackIcons,
   navLinks,

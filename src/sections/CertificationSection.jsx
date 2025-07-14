@@ -1,6 +1,6 @@
 import { examsImgList, hackathonImgList, techImgList } from "../constants";
-import AchievementsMarquee from "./AchievementsMarquee";
-import TitleHeader from "./TitleHeader";
+import AchievementsMarquee from "../components/AchievementsMarquee";
+import TitleHeader from "../components/TitleHeader";
 
 const CertificationSection = () => {
   return (
