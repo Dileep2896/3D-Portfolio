@@ -5,7 +5,7 @@ import Computer from "./Computer.jsx";
 
 const ContactExperience = () => {
   return (
-    <Canvas shadows camera={{ position: [-5, 2, 6], fov: 50 }}>
+    <Canvas shadows camera={{ position: [0, -2, 6], fov: 50 }}>
       <directionalLight position={[5, 5, 3]} intensity={2.5} color="#fff" />
 
       <directionalLight
