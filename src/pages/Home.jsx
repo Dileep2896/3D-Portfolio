@@ -1,3 +1,4 @@
+import CertificationSection from "../components/CertificationSection";
 import NavBar from "../components/NavBar";
 import ExperienceSection from "../sections/ExperienceSection";
 import FeatureCards from "../sections/FeatureCards";
@@ -14,6 +15,7 @@ const Home = () => {
       <FeatureCards />
       <ExperienceSection />
       <TechStack />
+      <CertificationSection />
     </>
   );
 };

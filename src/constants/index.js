@@ -222,26 +222,84 @@ const abilities = [
   },
 ];
 
-const techStackImgs = [
+const hackathonImgList = [
   {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    imgPath: "/achievements/hackathon/1.jpg",
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    imgPath: "/achievements/hackathon/2.png",
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    imgPath: "/achievements/hackathon/3.jpg",
   },
   {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    imgPath: "/achievements/hackathon/4.png",
   },
   {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    imgPath: "/achievements/hackathon/5.jpg",
+  },
+  {
+    imgPath: "/achievements/hackathon/6.png",
+  },
+  {
+    imgPath: "/achievements/hackathon/7.png",
+  },
+  {
+    imgPath: "/achievements/hackathon/8.png",
+  },
+  {
+    imgPath: "/achievements/hackathon/9.jpg",
+  },
+  {
+    imgPath: "/achievements/hackathon/10.png",
+  },
+  {
+    imgPath: "/achievements/hackathon/11.png",
+  },
+  {
+    imgPath: "/achievements/hackathon/12.png",
+  },
+];
+
+const examsImgList = [
+  {
+    imgPath: "/achievements/exams/1.png",
+  },
+  {
+    imgPath: "/achievements/exams/2.jpg",
+  },
+  {
+    imgPath: "/achievements/exams/3.jpg",
+  },
+  {
+    imgPath: "/achievements/exams/4.png",
+  },
+  {
+    imgPath: "/achievements/exams/5.png",
+  },
+  {
+    imgPath: "/achievements/exams/6.jpg",
+  },
+];
+
+const techImgList = [
+  {
+    imgPath: "/achievements/technical/1.jpg",
+  },
+  {
+    imgPath: "/achievements/technical/2.png",
+  },
+  {
+    imgPath: "/achievements/technical/3.jpeg",
+  },
+  {
+    imgPath: "/achievements/technical/4.jpeg",
+  },
+  {
+    imgPath: "/achievements/technical/5.jpeg",
+  },
+  {
+    imgPath: "/achievements/technical/6.jpeg",
   },
 ];
 
@@ -271,7 +329,7 @@ const techStackIcons = [
     name: "Native",
     modelPath: "/models/android_logo.glb",
     scale: 2,
-    rotation: [0, 0, 0],
+    rotation: [0.3, 0, 0],
     position: [0, 0, 0],
   },
   {
@@ -398,11 +456,13 @@ export {
   words,
   abilities,
   counterItems,
+  hackathonImgList,
   expCards,
   expLogos,
   socialImgs,
+  techImgList,
   techStackIcons,
-  techStackImgs,
   navLinks,
   projects,
+  examsImgList,
 };
