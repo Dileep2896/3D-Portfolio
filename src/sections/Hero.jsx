@@ -49,13 +49,13 @@ const Hero = () => {
               <h1>That Feel Seamless</h1>
               <h1>And Scale Without Breaking</h1>
             </div>
-            <p className="text-white-50 md:text-md relative z-10 pointer-events-none max-w-3xl">
+            <p className="text-white-50 md:text-md text-sm relative z-10 pointer-events-none max-w-3xl">
               Hi, I'm Dileep. A full-stack and mobile engineer with experience
               in production-ready systems and scalable architecture. I'm
               currently exploring new grad SDE opportunities for 2026.
             </p>
             <Button
-              className="md:w-100 md:h-16 w-90 h-12"
+              className="md:w-100 md:h-16 w-90 h-10"
               text="Stats that tells my story"
               onclick={(e) => {
                 e.preventDefault();

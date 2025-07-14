@@ -82,9 +82,7 @@ section {
 
   .hero-text {
     @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
-    img {
-      @apply size-8 md:size-10 object-contain;
-    }
+
     .slide {
       @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
     }
@@ -95,7 +93,7 @@ section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[60%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+    @apply xl:w-[60%] xl:h-[100%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-70 xl:-right-20 right-0;
   }
 
   .navbar {

@@ -4,6 +4,9 @@ import emailjs from "@emailjs/browser";
 import { FaEnvelope, FaPaperPlane } from "react-icons/fa";
 import ContactExperience from "../components/Models/contact/ContactExperience";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
@@ -32,9 +35,10 @@ const Contact = () => {
 
       // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
-      setLoading(false);
+      toast.success("Message sent successfully!");
     } catch (error) {
       console.error("EmailJS Error:", error); // Optional: show toast
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setLoading(false); // Always stop loading, even on error
     }
@@ -113,6 +117,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <ToastContainer position="bottom-right" autoClose={3000} />
       </div>
     </section>
   );
