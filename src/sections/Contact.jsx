@@ -66,6 +66,8 @@ const Contact = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="What’s your good name?"
+                    className="w-full p-3 rounded-md bg-grey-100 text-white placeholder-grey-50 
+             focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
                     required
                   />
                 </div>
@@ -79,6 +81,8 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="What’s your email address?"
+                    className="w-full p-3 rounded-md bg-grey-100 text-white placeholder-grey-50 
+             focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
                     required
                   />
                 </div>
@@ -92,6 +96,8 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="How can I help you?"
                     rows="5"
+                    className="w-full p-3 rounded-md bg-grey-100 text-white placeholder-grey-50 
+             focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
                     required
                   />
                 </div>
