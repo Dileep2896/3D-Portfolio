@@ -1,14 +1,14 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-import Computer from "./Computer.jsx";
 import { useMediaQuery } from "react-responsive";
+import { Coffee } from "./Coffee_for_two.jsx";
 
 const ContactExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <Canvas shadows camera={{ position: [0, -2, 6], fov: isMobile ? 55 : 50 }}>
+    <Canvas shadows camera={{ position: [0, 0, 7], fov: isMobile ? 55 : 50 }}>
       <directionalLight position={[5, 5, 3]} intensity={2.5} color="#fff" />
 
       <directionalLight
@@ -24,8 +24,13 @@ const ContactExperience = () => {
         maxPolarAngle={Math.PI / 2}
       />
 
-      <group scale={isMobile ? 0.8 : 0.9} position={[0, -1.6, 0]} castShadow>
-        <Computer />
+      <group
+        scale={isMobile ? 2.2 : 3}
+        position={[0, 0, 0]}
+        rotation={[0.6, 0, 0]}
+        castShadow
+      >
+        <Coffee />
       </group>
     </Canvas>
   );

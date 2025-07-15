@@ -77,8 +77,8 @@ const projects = [
       "A fully functional social media application built with Flutter to explore advanced architecture and state management.",
     image: "/images/projects/soocily.png",
     github: "https://github.com/Dileep2896/soocily",
-    demo: null,
-    tech: ["Flutter", "Firebase", "Bloc"],
+    demo: "https://soocily-affd3.web.app/",
+    tech: ["Flutter", "Firebase", "Bloc", "Material 3", "Clean Architecture"],
     bg: "bg-[#e5f2fc]",
   },
   {
@@ -98,7 +98,7 @@ const projects = [
     image: "/images/projects/gooddeeds.png",
     github: "https://github.com/Dileep2896/Hackathon",
     demo: null,
-    tech: ["Flutter", "Firebase", "Node.js"],
+    tech: ["Flutter", "Firebase", "Bloc"],
     bg: "bg-[#bed5f0]",
   },
   {
@@ -108,7 +108,14 @@ const projects = [
     image: "/images/projects/spotify_clone.png",
     github: "https://github.com/Dileep2896/spotify_clone",
     demo: null,
-    tech: ["Flutter", "Firebase", "REST APIs"],
+    tech: [
+      "Flutter",
+      "FastAPI",
+      "REST APIs",
+      "Cloudinary",
+      "PostgreSQL",
+      "SQLAlchemy",
+    ],
     bg: "bg-[#f2f2f2]",
   },
   {
@@ -118,7 +125,7 @@ const projects = [
     image: "/images/projects/project.png",
     github: "https://github.com/Dileep2896/TaskNexus",
     demo: null,
-    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    tech: ["Next.js", "TailwindCSS", "Node.js", "PostgreSQL", "MongoDB", "AWS"],
     bg: "bg-[#e9ecf5]",
   },
   {
@@ -127,8 +134,15 @@ const projects = [
       "Real-time collaborative document editing platform with live updates and multi-user support.",
     image: "/images/projects/documate.png",
     github: "https://github.com/Dileep2896/documate",
-    demo: null,
-    tech: ["React", "Quill.js", "Socket.io", "Node.js"],
+    demo: "https://documate-swart.vercel.app/",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Liveblocks",
+      "Lexical Editor",
+      "ShadCN",
+      "TailwindCSS",
+    ],
     bg: "bg-[#f7faff]",
   },
   {
@@ -138,7 +152,15 @@ const projects = [
     image: "/images/projects/gadgetbay.png",
     github: "https://github.com/Dileep2896/GadgetBay",
     demo: null,
-    tech: ["React", "Node.js", "MongoDB", "Chart.js"],
+    tech: [
+      "Next.js",
+      "TailwindCSS",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Axios",
+      "AWS",
+    ],
     bg: "bg-[#edf1f6]",
   },
   {
@@ -158,7 +180,7 @@ const projects = [
     image: "/images/projects/talkbot.png",
     github: "https://github.com/Dileep2896/ai-chat-bot",
     demo: null,
-    tech: ["React", "Express", "MongoDB", "OpenAI API"],
+    tech: ["React", "Express", "MongoDB", "OpenAI API", "Docker", "Axios"],
     bg: "bg-[#cde2f3]",
   },
   {
