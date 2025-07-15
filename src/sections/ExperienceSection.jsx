@@ -5,10 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { expCards } from "../constants";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
+import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
+  const isDesktop = useMediaQuery({ query: "(max-width: 1024px)" });
+
   useGSAP(() => {
     gsap.utils.toArray(".timeline-card").forEach((card) => {
       gsap.from(card, {
@@ -79,7 +82,11 @@ const Experience = () => {
                   <div className="flex items-start">
                     <div className="timeline-wrapper">
                       <div className="timeline" />
-                      <div className="gradient-line w-1 h-full" />
+                      <div
+                        className={`gradient-line w-1 h-full ${
+                          isDesktop ? "ml-0" : "ml-1.5"
+                        } `}
+                      />
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-10 ">
                       <div className="timeline-logo">
