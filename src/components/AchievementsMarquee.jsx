@@ -16,10 +16,7 @@ const AchievementsMarquee = ({ imageList, title }) => {
       <h2 className="md:pl-40 text-3xl md:mt-10 mt-10 flex justify-center items-center md:justify-start md:items-start">
         {title}
       </h2>
-      <div className="mt-10">
-        <div className="gradient-edge"></div>
-        <div className="gradient-edge"></div>
-
+      <div className="mt-10 relative overflow-hidden">
         <div className="marquee h-[150px] sm:h-[170px] md:h-[200px]">
           <div className="marquee-box md:gap-12 gap-5">
             {imageList.map((img, index) => (
@@ -30,6 +27,9 @@ const AchievementsMarquee = ({ imageList, title }) => {
             ))}
           </div>
         </div>
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
       </div>
     </>
   );

@@ -1166,6 +1166,7 @@ export function Desktop(props) {
             position={[-61.024, -0.556, 156.09]}
             rotation={[Math.PI / 2, 0, -Math.PI]}
             scale={[-368.949, -731.636, -25.976]}
+            visible={false}
           />
           <mesh
             geometry={nodes.Cube001_Material055_0.geometry}
@@ -4721,6 +4722,7 @@ export function Desktop(props) {
             position={[117.182, 25.605, -29.165]}
             rotation={[-Math.PI / 2, 0, 0]}
             scale={[124.427, 154.111, 119.911]}
+            visible={false}
           />
           <mesh
             geometry={nodes.psuback_psuback_0.geometry}
@@ -4819,7 +4821,7 @@ export function Desktop(props) {
           />
         </group>
       </group>
-      <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
+      <mesh geometry={nodes.Cube.geometry} material={materials.Material} visible={false} />
     </group>
   );
 }

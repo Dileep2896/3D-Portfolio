@@ -1,122 +1,288 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { projects } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaCode,
+  FaTrophy,
+  FaRocket,
+} from "react-icons/fa";
+import GradientBackground from "../components/GradientBackground";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Layout order: interleave projects with accent cards to fill gaps
+const gridItems = [
+  // Row 1: two large cards
+  { type: "project", slug: "polychat" },
+  { type: "project", slug: "soocily" },
+  // Row 2: three medium + one accent
+  { type: "project", slug: "interviewer" },
+  { type: "project", slug: "good-deeds" },
+  { type: "project", slug: "spotify-clone" },
+  { type: "accent", value: "50+", label: "Projects Built", Icon: FaRocket, gradient: "from-cyan-500/20 to-blue-600/20" },
+  // Row 3: one large (span 2) + one medium + one accent
+  { type: "project", slug: "tasknexus" },
+  { type: "project", slug: "documate" },
+  { type: "accent", value: "{ }", label: "Clean Code Enthusiast", Icon: FaCode, gradient: "from-violet-500/20 to-purple-600/20" },
+  // Row 4: three medium + one accent
+  { type: "project", slug: "gadgetbay" },
+  { type: "project", slug: "split" },
+  { type: "project", slug: "talkbot" },
+  { type: "accent", value: "12x", label: "Hackathon Winner", Icon: FaTrophy, gradient: "from-amber-500/20 to-orange-600/20" },
+  // Row 5: four small
+  { type: "project", slug: "timer-game" },
+  { type: "project", slug: "gymgrit" },
+  { type: "project", slug: "flutter-chat-app" },
+  { type: "project", slug: "nasa-apod" },
+];
+
+const ProjectBentoCard = ({ project, onClick }) => {
+  const glowRef = useRef(null);
+  const isLarge = project.gridSize === "large";
+  const isSmall = project.gridSize === "small";
+
+  const imgHeightClass = isLarge
+    ? "project-img-large"
+    : isSmall
+      ? "project-img-small"
+      : "project-img-medium";
+
+  const maxTechPills = isSmall ? 3 : undefined;
+  const techToShow = maxTechPills
+    ? project.tech.slice(0, maxTechPills)
+    : project.tech;
+  const extraCount = maxTechPills
+    ? project.tech.length - maxTechPills
+    : 0;
+
+  const handleCardClick = () => {
+    onClick(project.slug);
+  };
+
+  const handleLinkClick = (e) => {
+    e.stopPropagation();
+  };
+
+  const handleMouseMove = (e) => {
+    const glow = glowRef.current;
+    if (!glow) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    glow.style.opacity = "1";
+    glow.style.background = `radial-gradient(circle at ${px}px ${py}px, rgba(255,255,255,0.05) 0%, transparent 60%)`;
+    e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+  };
+
+  const handleMouseLeave = (e) => {
+    const glow = glowRef.current;
+    if (!glow) return;
+    glow.style.opacity = "0";
+    e.currentTarget.style.borderColor = "";
+  };
+
+  return (
+    <div className={isLarge ? "project-bento-large" : ""}>
+      <div
+        className="project-bento-card h-full"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleCardClick}
+      >
+        <div ref={glowRef} className="tilt-glow-overlay" />
+
+        {/* Image */}
+        <div className={`project-card-image ${imgHeightClass}`}>
+          <img src={project.image} alt={project.title} />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 p-4 md:p-5">
+          <h3 className="text-base md:text-lg font-semibold text-white leading-tight mb-2">
+            {project.title}
+          </h3>
+
+          {isLarge && (
+            <p className="text-white-50 text-sm leading-relaxed mb-3 line-clamp-1">
+              {project.description}
+            </p>
+          )}
+
+          {/* Tech pills */}
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {techToShow.map((tech, i) => (
+              <span key={i} className="project-tech-pill">
+                {tech}
+              </span>
+            ))}
+            {extraCount > 0 && (
+              <span className="project-tech-pill">+{extraCount}</span>
+            )}
+          </div>
+
+          {/* Links */}
+          <div className="project-card-links">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card-link"
+              onClick={handleLinkClick}
+            >
+              <FaGithub className="text-sm" />
+            </a>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card-link"
+                onClick={handleLinkClick}
+              >
+                <FaExternalLinkAlt className="text-xs" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AccentCard = ({ value, label, Icon, gradient }) => {
+  const glowRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const glow = glowRef.current;
+    if (!glow) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    glow.style.opacity = "1";
+    glow.style.background = `radial-gradient(circle at ${px}px ${py}px, rgba(255,255,255,0.05) 0%, transparent 60%)`;
+    e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+  };
+
+  const handleMouseLeave = (e) => {
+    const glow = glowRef.current;
+    if (!glow) return;
+    glow.style.opacity = "0";
+    e.currentTarget.style.borderColor = "";
+  };
+
+  return (
+    <div className="hidden xl:block">
+      <div
+        className="project-accent-card"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div ref={glowRef} className="tilt-glow-overlay" />
+        <div className={`project-accent-bg bg-gradient-to-br ${gradient}`} />
+        <div className="relative z-10 flex flex-col items-center justify-center text-center h-full gap-3">
+          <Icon className="text-3xl text-white/30" />
+          <div className="project-accent-value">{value}</div>
+          <div className="text-sm text-white-50 font-medium">{label}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Projects = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
-  const cardRefs = useRef([]);
   const headingRef = useRef(null);
 
-  cardRefs.current = [];
-
-  const addToRefs = (el) => {
-    if (el && !cardRefs.current.includes(el)) {
-      cardRefs.current.push(el);
-    }
-  };
+  // Build a slug->project lookup
+  const projectMap = {};
+  for (const p of projects) {
+    projectMap[p.slug] = p;
+  }
 
   useGSAP(() => {
     gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
-    );
-
-    cardRefs.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.05 * index,
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=10",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top bottom-=100",
-          toggleActions: "play none none none",
-        },
-      }
+      { opacity: 1, y: 0, duration: 1, delay: 0.2 }
     );
+
+    gsap.from(".project-bento-card, .project-accent-card", {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+      duration: 0.7,
+      ease: "power2.out",
+      stagger: 0.08,
+      scrollTrigger: {
+        trigger: ".project-bento-grid",
+        start: "top 85%",
+      },
+    });
+
+    gsap.from(".project-accent-value", {
+      scale: 0.8,
+      duration: 0.6,
+      ease: "back.out(1.7)",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".project-bento-grid",
+        start: "top 85%",
+      },
+    });
   }, []);
 
+  const handleCardClick = (slug) => {
+    navigate(`/projects/${slug}`);
+  };
+
   return (
-    <section ref={sectionRef} className="px-6 py-16 xl:px-24">
-      <h1 ref={headingRef} className="text-3xl font-bold mb-10 text-white-50">
-        MY PROJECTS
-      </h1>
+    <>
+      <GradientBackground />
+      <section ref={sectionRef} className="px-6 py-16 xl:px-24 relative z-1">
+        <div ref={headingRef} className="flex items-center gap-4 mb-10">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
+          >
+            <FaArrowLeft className="text-white-50 text-sm" />
+          </button>
+          <h1 className="text-3xl font-bold text-white-50">MY PROJECTS</h1>
+        </div>
 
-      <div className="project-list-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.map((project, idx) => (
-          <div key={idx} ref={addToRefs} className="project overflow-hidden">
-            <div className={`image-wrapper ${project.bg} p-4 rounded-lg`}>
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-67 object-cover rounded-lg"
+        <div className="project-bento-grid">
+          {gridItems.map((item, index) => {
+            if (item.type === "accent") {
+              return (
+                <AccentCard
+                  key={`accent-${index}`}
+                  value={item.value}
+                  label={item.label}
+                  Icon={item.Icon}
+                  gradient={item.gradient}
+                />
+              );
+            }
+            const project = projectMap[item.slug];
+            if (!project) return null;
+            return (
+              <ProjectBentoCard
+                key={project.slug}
+                project={project}
+                onClick={handleCardClick}
               />
-            </div>
-            <h2 className="text-lg font-semibold mt-4 text-white">
-              {project.title}
-            </h2>
-            {/* Tech stack */}
-            <div className="flex flex-wrap gap-2 mt-2">
-              {project.tech.map((techItem, i) => (
-                <span
-                  key={i}
-                  className="bg-white/10 text-white text-xs px-3 py-1 rounded-md"
-                >
-                  {techItem}
-                </span>
-              ))}
-            </div>
-
-            {/* GitHub + Live Demo Links */}
-            <div className="flex gap-4 mt-3">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white-50 hover:text-white text-sm flex items-center gap-1"
-              >
-                <FaGithub className="text-base" />
-                GitHub
-              </a>
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white-50 hover:text-white text-sm flex items-center gap-1"
-                >
-                  <FaExternalLinkAlt className="text-sm" />
-                  Live Demo
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            );
+          })}
+        </div>
+      </section>
+    </>
   );
 };
 

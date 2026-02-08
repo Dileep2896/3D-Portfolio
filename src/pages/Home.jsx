@@ -7,12 +7,16 @@ import Hero from "../sections/Hero";
 import ShowcaseSection from "../sections/ShowcaseSection";
 import TechStack from "../sections/TechStack";
 import Footer from "../sections/Footer";
+import GradientBackground from "../components/GradientBackground";
+import AnimateCounter from "../components/AnimateCounter";
 
 const Home = () => {
   return (
     <>
+      <GradientBackground />
       <NavBar />
       <Hero />
+      <AnimateCounter />
       <ShowcaseSection />
       <FeatureCards />
       <ExperienceSection />

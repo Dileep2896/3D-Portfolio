@@ -2,8 +2,11 @@ import { useGSAP } from "@gsap/react";
 import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 const TechIcon = ({ model }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   useGSAP(() => {
     gsap.fromTo(
       ".tech-card",
@@ -25,11 +28,11 @@ const TechIcon = ({ model }) => {
   const scene = useGLTF(model.modelPath);
 
   return (
-    <Canvas>
+    <Canvas style={{ touchAction: isMobile ? "auto" : "none" }}>
       <ambientLight intensity={0.3} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Environment preset="city" />
-      <OrbitControls enableZoom={false} />
+      {!isMobile && <OrbitControls enableZoom={false} />}
       <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
         <group
           scale={model.scale}

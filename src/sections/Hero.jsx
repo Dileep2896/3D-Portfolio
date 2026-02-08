@@ -2,13 +2,12 @@ import { words } from "../constants";
 import Button from "../components/Button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
 import { useGSAP } from "@gsap/react";
-import gasp from "gsap";
-import AnimateCounter from "../components/AnimateCounter";
+import gsap from "gsap";
 import { FaArrowDown, FaChartLine } from "react-icons/fa";
 
 const Hero = () => {
   useGSAP(() => {
-    gasp.fromTo(
+    gsap.fromTo(
       ".hero-text h1",
       {
         y: 50,
@@ -62,7 +61,7 @@ const Hero = () => {
 
                 const target = document.getElementById("counter");
 
-                if (target && "button") {
+                if (target) {
                   const offset = window.innerWidth * 0.15;
                   const top =
                     target.getBoundingClientRect().top +
@@ -92,7 +91,6 @@ const Hero = () => {
         </figure>
       </div>
 
-      <AnimateCounter />
     </section>
   );
 };
