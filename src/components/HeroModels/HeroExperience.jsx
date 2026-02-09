@@ -1,9 +1,17 @@
-import { OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useRef, useEffect, useState, Component } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Desktop } from "./Desktop";
 import HeroLights from "./HeroLights";
+
+const CanvasLoader = () => (
+  <Html center>
+    <div className="model-loader">
+      <div className="model-loader-spinner" />
+    </div>
+  </Html>
+);
 
 const FloatingDesktop = ({ scale }) => {
   const groupRef = useRef();
@@ -79,7 +87,7 @@ const HeroExperience = () => {
               pointerEvents: isMobile ? "none" : "auto",
             }}
           >
-            <Suspense fallback={null}>
+            <Suspense fallback={<CanvasLoader />}>
               <OrbitControls
                 enablePan={false}
                 enableZoom={!isTablet}

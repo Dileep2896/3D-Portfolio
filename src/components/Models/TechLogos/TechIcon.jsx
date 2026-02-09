@@ -1,9 +1,45 @@
 import { useGSAP } from "@gsap/react";
-import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
+import {
+  Environment,
+  Float,
+  Html,
+  OrbitControls,
+  useGLTF,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+
+const CanvasLoader = () => (
+  <Html center>
+    <div className="model-loader">
+      <div className="model-loader-spinner" />
+    </div>
+  </Html>
+);
+
+const TechModel = ({ model, isMobile }) => {
+  const scene = useGLTF(model.modelPath);
+
+  return (
+    <>
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <Environment preset="city" />
+      {!isMobile && <OrbitControls enableZoom={false} />}
+      <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
+        <group
+          scale={model.scale}
+          rotation={model.rotation}
+          position={model.position}
+        >
+          <primitive object={scene.scene} />
+        </group>
+      </Float>
+    </>
+  );
+};
 
 const TechIcon = ({ model }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -40,8 +76,6 @@ const TechIcon = ({ model }) => {
     return () => observer.disconnect();
   }, []);
 
-  const scene = useGLTF(model.modelPath);
-
   return (
     <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
       {isVisible && (
@@ -50,19 +84,9 @@ const TechIcon = ({ model }) => {
           dpr={[1, 1.5]}
           gl={{ powerPreference: "high-performance", antialias: false }}
         >
-          <ambientLight intensity={0.3} />
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <Environment preset="city" />
-          {!isMobile && <OrbitControls enableZoom={false} />}
-          <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
-            <group
-              scale={model.scale}
-              rotation={model.rotation}
-              position={model.position}
-            >
-              <primitive object={scene.scene} />
-            </group>
-          </Float>
+          <Suspense fallback={<CanvasLoader />}>
+            <TechModel model={model} isMobile={isMobile} />
+          </Suspense>
         </Canvas>
       )}
     </div>

@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="hero-layout">
         {/* LEFT: HERO CONTENT */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col md:gap-7 gap-5">
             <div className="hero-text">
               <h1>
                 Building
@@ -54,7 +54,7 @@ const Hero = () => {
               currently exploring new grad SDE opportunities for 2026.
             </p>
             <Button
-              className="md:w-100 md:h-16 w-90 h-10"
+              className="md:w-100 md:h-16 w-full max-w-90 h-10"
               text="Stats that tells my story"
               onclick={(e) => {
                 e.preventDefault();
