@@ -763,32 +763,6 @@ const expCards = [
   },
 ];
 
-const expLogos = [
-  {
-    name: "logo-metis",
-    imgPath: "/images/logo-metis.svg",
-  },
-  {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
-  },
-  {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
-  },
-  {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
-  },
-  {
-    name: "logo4",
-    imgPath: "/images/logo4.png",
-  },
-  {
-    name: "logo5",
-    imgPath: "/images/logo5.png",
-  },
-];
 
 const socialIcons = [
   {
@@ -814,7 +788,6 @@ export {
   counterItems,
   hackathonImgList,
   expCards,
-  expLogos,
   socialIcons,
   techImgList,
   techStackIcons,

@@ -28,7 +28,11 @@ const TechIcon = ({ model }) => {
   const scene = useGLTF(model.modelPath);
 
   return (
-    <Canvas style={{ touchAction: isMobile ? "auto" : "none" }}>
+    <Canvas
+      style={{ touchAction: isMobile ? "auto" : "none" }}
+      dpr={[1, 1.5]}
+      gl={{ powerPreference: "high-performance", antialias: false }}
+    >
       <ambientLight intensity={0.3} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Environment preset="city" />

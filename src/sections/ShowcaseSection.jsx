@@ -105,7 +105,6 @@ const ShowcaseSection = () => {
           </div>
         </div>
         <Button
-          hideIcon={true}
           text={"Check out more"}
           btnMargin={"mt-5 xl:mt-0"}
           onclick={() => navigate("/projects")}
