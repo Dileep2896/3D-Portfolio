@@ -54,7 +54,7 @@ const ShowcaseSection = () => {
           {/* LEFT */}
           <div className="first-project-wrapper" ref={project1Ref}>
             <div className="image-wrapper">
-              <img src="/images/projects/polychat.png" alt="polychat" />
+              <img src="/images/projects/polychat.webp" alt="polychat" loading="lazy" />
             </div>
             <div className="text-content">
               <h2>
@@ -76,8 +76,8 @@ const ShowcaseSection = () => {
           {/* RIGHT */}
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={project2Ref}>
-              <div className="image-wrapper bg-[#b8bfdd]">
-                <img src="/images/projects/interviewer.png" alt="" />
+              <div className="image-wrapper showcase-card-dark">
+                <img src="/images/projects/interviewer.webp" alt="" loading="lazy" />
               </div>
               <h2>
                 <a
@@ -90,8 +90,8 @@ const ShowcaseSection = () => {
             </div>
 
             <div className="project" ref={project3Ref}>
-              <div className="image-wrapper bg-[#bed5f0]">
-                <img src="/images/projects/gooddeeds.png" alt="gooddeeds" />
+              <div className="image-wrapper showcase-card-dark">
+                <img src="/images/projects/gooddeeds.webp" alt="gooddeeds" loading="lazy" />
               </div>
               <h2>
                 <a

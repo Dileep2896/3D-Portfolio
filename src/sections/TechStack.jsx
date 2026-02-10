@@ -1,8 +1,13 @@
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TitleHeader from "../components/TitleHeader";
 import { techStackIcons, skillCategories } from "../constants";
 import TechIcon from "../components/Models/TechLogos/TechIcon";
 import useTiltGlow from "../hooks/useTiltGlow";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TechCard = ({ icon }) => {
   const { cardRef, glowRef, handleMouseMove, handleMouseLeave } = useTiltGlow({
@@ -30,6 +35,20 @@ const TechCard = ({ icon }) => {
 };
 
 const TechStack = () => {
+  useGSAP(() => {
+    gsap.from(".skill-card-anim", {
+      opacity: 0,
+      y: 30,
+      duration: 0.5,
+      ease: "power2.out",
+      stagger: 0.06,
+      scrollTrigger: {
+        trigger: ".skill-card-anim",
+        start: "top 90%",
+      },
+    });
+  }, []);
+
   return (
     <div id="skills" className="flex-center px-5 md:px-10 mt-10 md:mt-40 relative z-1">
       <div className="w-full h-full md:px-10 px-5">
@@ -48,11 +67,7 @@ const TechStack = () => {
           {skillCategories.map((cat) => (
             <div
               key={cat.category}
-              className="rounded-xl p-4"
-              style={{
-                background: "rgba(15, 15, 20, 0.6)",
-                border: "1px solid rgba(255, 255, 255, 0.06)",
-              }}
+              className="glass-card p-4 skill-card-anim"
             >
               <h4 className="text-white font-semibold text-sm mb-3">
                 {cat.category}

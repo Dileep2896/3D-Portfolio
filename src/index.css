@@ -308,11 +308,11 @@ section {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl overflow-hidden;
       }
 
       img {
-        @apply w-full h-full object-contain rounded-xl;
+        @apply w-full h-full object-cover rounded-xl;
       }
 
       h2 {
@@ -663,13 +663,19 @@ section {
 /* Footer Section */
 .footer-section {
   @apply mt-20 relative;
-  background: rgba(10, 10, 15, 0.9);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(10, 10, 15, 0.95) 100%
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .footer-gradient-line {
-  @apply w-full h-[2px];
-  background: linear-gradient(90deg, transparent, #25d6ff, #8753ff, #3ccbcf, transparent);
+  @apply w-full h-[1px];
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2), transparent);
 }
 
 .footer-main {
@@ -686,11 +692,7 @@ section {
 }
 
 .footer-logo {
-  @apply text-2xl font-bold;
-  background: linear-gradient(135deg, #25d6ff 0%, #8753ff 50%, #3ccbcf 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply text-2xl font-bold text-white;
 }
 
 .footer-tagline {
@@ -699,14 +701,16 @@ section {
 
 .footer-resume-btn {
   @apply inline-flex items-center gap-2 px-4 py-2 mt-2 rounded-lg text-sm font-medium transition-all duration-300 w-fit;
-  background: rgba(37, 214, 255, 0.1);
-  border: 1px solid rgba(37, 214, 255, 0.3);
-  color: #25d6ff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d9ecff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .footer-resume-btn:hover {
-  background: rgba(37, 214, 255, 0.2);
-  border-color: rgba(37, 214, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -724,7 +728,7 @@ section {
 }
 
 .footer-nav-link {
-  @apply text-white-50 text-sm transition-all duration-300 hover:text-cyan-400 hover:translate-x-1 inline-block;
+  @apply text-white-50 text-sm transition-all duration-300 hover:text-white hover:translate-x-1 inline-block;
 }
 
 /* Contact Column */
@@ -741,11 +745,11 @@ section {
 }
 
 .footer-contact-item:hover {
-  @apply text-cyan-400;
+  @apply text-white;
 }
 
 .footer-contact-icon {
-  @apply text-cyan-400 text-base;
+  @apply text-white-50 text-base;
 }
 
 /* Social Icons */
@@ -755,22 +759,23 @@ section {
 
 .footer-social-icon {
   @apply flex justify-center items-center w-10 h-10 rounded-lg text-white-50 transition-all duration-300;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .footer-social-icon:hover {
-  background: rgba(37, 214, 255, 0.15);
-  border-color: rgba(37, 214, 255, 0.4);
-  color: #25d6ff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   transform: translateY(-3px);
 }
 
 /* Copyright Bar */
 .footer-copyright {
   @apply px-6 md:px-12 lg:px-20 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white-50;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(5, 5, 10, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .footer-made-with {
@@ -1315,24 +1320,36 @@ section {
   transform: translateY(-2px);
 }
 
+/* ===== Showcase Dark Card ===== */
+.showcase-card-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+}
+
 /* ===== Resume Button in NavBar ===== */
 .resume-btn {
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  margin-right: 0.75rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   color: #d9ecff;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(20, 20, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
 .resume-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
@@ -1357,8 +1374,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(37, 214, 255, 0.1);
-  border: 1px solid rgba(37, 214, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   flex-shrink: 0;
 }
 
@@ -1400,11 +1417,17 @@ section {
   padding: 1.5rem;
   border-radius: 1rem;
   overflow: hidden;
-  background: rgba(15, 15, 20, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transform-style: preserve-3d;
   transform: perspective(800px) rotateY(0deg) rotateX(0deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -1433,6 +1456,32 @@ section {
   color: #ffffff;
 }
 
+
+/* ===== Glassmorphism Card ===== */
+.glass-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 
 /* ===== Project Metrics Badge ===== */
 .project-metrics-badge {

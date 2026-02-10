@@ -1,7 +1,12 @@
 import { FaQuoteLeft } from "react-icons/fa";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TitleHeader from "../components/TitleHeader";
 import { testimonials } from "../constants";
 import useTiltGlow from "../hooks/useTiltGlow";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TestimonialCard = ({ testimonial }) => {
   const { cardRef, glowRef, handleMouseMove, handleMouseLeave } = useTiltGlow({
@@ -33,6 +38,21 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 const Testimonials = () => {
+  useGSAP(() => {
+    gsap.from(".testimonial-card", {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+      duration: 0.7,
+      ease: "power2.out",
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: "#testimonials",
+        start: "top 85%",
+      },
+    });
+  }, []);
+
   return (
     <section id="testimonials" className="section-padding">
       <div className="w-full md:px-10 px-5">

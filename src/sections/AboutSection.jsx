@@ -96,10 +96,10 @@ const AboutSection = () => {
           </div>
 
           {/* Right — Education Card */}
-          <div className="about-edu card-border p-6 md:p-8">
+          <div className="about-edu glass-card p-6 md:p-8">
             <div className="flex items-center gap-4 mb-5">
               <div className="about-edu-icon">
-                <FaGraduationCap className="text-xl text-cyan-400" />
+                <FaGraduationCap className="text-xl text-white" />
               </div>
               <div>
                 <h3 className="text-white font-semibold text-lg">

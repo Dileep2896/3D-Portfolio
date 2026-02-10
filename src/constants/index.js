@@ -810,7 +810,7 @@ const skillCategories = [
   { category: "Frontend", skills: ["React", "Next.js", "HTML/CSS", "Tailwind", "Three.js"] },
   { category: "Mobile", skills: ["Flutter", "React Native", "Android (Kotlin/Java)"] },
   { category: "Backend", skills: ["Node.js", "Express", "FastAPI", "Django"] },
-  { category: "Cloud & DevOps", skills: ["AWS (EC2, S3, Lambda)", "Docker", "CI/CD"] },
+  { category: "Cloud & DevOps", skills: ["AWS (EC2, S3, Lambda)", "GCP", "Docker", "CI/CD"] },
   { category: "Databases", skills: ["MongoDB", "PostgreSQL", "Firebase", "Redis"] },
   { category: "Languages", skills: ["JavaScript", "TypeScript", "Python", "Dart", "Java", "Kotlin", "C++"] },
   { category: "Tools", skills: ["Git", "Figma", "Jira", "Postman"] },

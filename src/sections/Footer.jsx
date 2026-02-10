@@ -25,7 +25,7 @@ const Footer = () => {
               experiences with modern technologies.
             </p>
             <a
-              href="/resume.pdf"
+              href="https://s3-personal-bucket.s3.amazonaws.com/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-resume-btn"
@@ -91,9 +91,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Dileep Kumar Sharma. All rights reserved.
         </p>
         <p className="footer-made-with">
-          Built with <span className="text-cyan-400">React</span>,{" "}
-          <span className="text-purple-400">Three.js</span> &{" "}
-          <span className="text-teal-400">GSAP</span>
+          Built with React, Three.js & GSAP
         </p>
       </div>
     </footer>

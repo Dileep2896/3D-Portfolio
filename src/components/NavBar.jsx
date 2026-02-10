@@ -35,20 +35,22 @@ const NavBar = () => {
             ))}
           </ul>
         </nav>
-        <a
-          href="https://s3-personal-bucket.s3.amazonaws.com/Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="resume-btn hidden lg:flex"
-        >
-          <FaFileDownload className="text-sm" />
-          <span>Resume</span>
-        </a>
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact Me</span>
-          </div>
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://s3-personal-bucket.s3.amazonaws.com/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn hidden lg:flex"
+          >
+            <FaFileDownload className="text-sm" />
+            <span>Resume</span>
+          </a>
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact Me</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );
