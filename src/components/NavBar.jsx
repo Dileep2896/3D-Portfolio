@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaFileDownload } from "react-icons/fa";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
@@ -16,7 +17,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
         <a className="logo" href="#hero">
           Dileep Sharma
@@ -34,6 +35,15 @@ const NavBar = () => {
             ))}
           </ul>
         </nav>
+        <a
+          href="https://s3-personal-bucket.s3.amazonaws.com/Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-btn hidden lg:flex"
+        >
+          <FaFileDownload className="text-sm" />
+          <span>Resume</span>
+        </a>
         <a href="#contact" className="contact-btn group">
           <div className="inner">
             <span>Contact Me</span>

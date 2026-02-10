@@ -9,6 +9,8 @@ import TechStack from "../sections/TechStack";
 import Footer from "../sections/Footer";
 import GradientBackground from "../components/GradientBackground";
 import AnimateCounter from "../components/AnimateCounter";
+import AboutSection from "../sections/AboutSection";
+import Testimonials from "../sections/Testimonials";
 
 const Home = () => {
   return (
@@ -16,12 +18,14 @@ const Home = () => {
       <GradientBackground />
       <NavBar />
       <Hero />
+      <AboutSection />
       <AnimateCounter />
       <ShowcaseSection />
       <FeatureCards />
       <ExperienceSection />
       <TechStack />
       <CertificationSection />
+      <Testimonials />
       <Contact />
       <Footer />
     </>

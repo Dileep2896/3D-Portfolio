@@ -80,7 +80,7 @@ const projects = [
       "RESTful API backend built with Express and MongoDB",
       "Dark mode UI with Tailwind CSS and DaisyUI components",
     ],
-    image: "/images/projects/polyproject.png",
+    image: "/images/projects/polyproject.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/PolyChat/main/screenshots/polychat.png",
       "https://raw.githubusercontent.com/Dileep2896/PolyChat/main/screenshots/home.png",
@@ -93,6 +93,7 @@ const projects = [
     github: "https://github.com/Dileep2896/PolyChat",
     demo: "https://polychat.vercel.app/",
     tech: ["React", "Express", "MongoDB", "Zustand", "Stream SDK"],
+    metrics: "Real-time chat with 10+ language pairs",
     bg: "bg-[#fff]",
     gridSize: "large",
   },
@@ -111,7 +112,7 @@ const projects = [
       "Material 3 design system for modern, consistent UI",
       "Firebase Authentication for secure user management",
     ],
-    image: "/images/projects/soocily.png",
+    image: "/images/projects/soocily.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/soocily/main/public/img%201.png",
       "https://raw.githubusercontent.com/Dileep2896/soocily/main/public/img%202.png",
@@ -124,6 +125,7 @@ const projects = [
     github: "https://github.com/Dileep2896/soocily",
     demo: "https://soocily-affd3.web.app/",
     tech: ["Flutter", "Firebase", "Bloc", "Material 3", "Clean Architecture"],
+    metrics: "Social platform — $1.5M valuation startup",
     bg: "bg-[#e5f2fc]",
     gridSize: "large",
   },
@@ -142,7 +144,7 @@ const projects = [
       "Full-stack implementation with Next.js and MongoDB",
       "Responsive design for practice on any device",
     ],
-    image: "/images/projects/interviewer.png",
+    image: "/images/projects/interviewer.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/interviewer/main/public/screen%201.png",
       "https://raw.githubusercontent.com/Dileep2896/interviewer/main/public/screen%202.png",
@@ -151,6 +153,7 @@ const projects = [
     github: "https://github.com/Dileep2896/interviewer",
     demo: "https://interviewer-demo.vercel.app/",
     tech: ["Next.js", "React", "Node.js", "MongoDB"],
+    metrics: "AI-powered mock interviews with GPT-4",
     bg: "bg-[#b8bfdd]",
     gridSize: "medium",
   },
@@ -169,7 +172,7 @@ const projects = [
       "User verification and profile management",
       "BLoC state management for clean separation of concerns",
     ],
-    image: "/images/projects/gooddeeds.png",
+    image: "/images/projects/gooddeeds.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/Hackathon/main/screenshots/1.png",
       "https://raw.githubusercontent.com/Dileep2896/Hackathon/main/screenshots/2.png",
@@ -202,7 +205,7 @@ const projects = [
       "Custom FastAPI backend with PostgreSQL and SQLAlchemy",
       "Cloudinary CDN for optimized media delivery",
     ],
-    image: "/images/projects/spotify_clone.png",
+    image: "/images/projects/spotify_clone.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/spotify_clone/main/project_assets/home.png",
       "https://raw.githubusercontent.com/Dileep2896/spotify_clone/main/project_assets/fav.png",
@@ -239,7 +242,7 @@ const projects = [
       "Redux state management for complex UI interactions",
       "AWS deployment (EC2, RDS, Amplify, S3, API Gateway)",
     ],
-    image: "/images/projects/project.png",
+    image: "/images/projects/project.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/TaskNexus/main/project_screenshot/home.png",
       "https://raw.githubusercontent.com/Dileep2896/TaskNexus/main/project_screenshot/project.png",
@@ -268,7 +271,7 @@ const projects = [
       "Real-time notifications for document activity",
       "TypeScript throughout for type-safe development",
     ],
-    image: "/images/projects/documate.png",
+    image: "/images/projects/documate.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/documate/main/public/login.png",
       "https://raw.githubusercontent.com/Dileep2896/documate/main/public/home.png",
@@ -303,7 +306,7 @@ const projects = [
       "AWS deployment for production-grade hosting",
       "Responsive TailwindCSS design for desktop and mobile use",
     ],
-    image: "/images/projects/gadgetbay.png",
+    image: "/images/projects/gadgetbay.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/GadgetBay/main/public/dashboard.png",
       "https://raw.githubusercontent.com/Dileep2896/GadgetBay/main/public/inventory.png",
@@ -321,6 +324,7 @@ const projects = [
       "Axios",
       "AWS",
     ],
+    metrics: "Inventory for 500+ products",
     bg: "bg-[#edf1f6]",
     gridSize: "medium",
   },
@@ -339,7 +343,7 @@ const projects = [
       "Provider state management for clean architecture",
       "Cross-platform iOS and Android support",
     ],
-    image: "/images/projects/split.png",
+    image: "/images/projects/split.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/split/main/assets/image1.png",
       "https://raw.githubusercontent.com/Dileep2896/split/main/assets/image2.png",
@@ -348,6 +352,7 @@ const projects = [
     github: "https://github.com/Dileep2896/split",
     demo: null,
     tech: ["Flutter", "Firebase", "Cloud Firestore"],
+    metrics: "Expense splitting for group trips",
     bg: "bg-[#e0f4f8]",
     gridSize: "medium",
   },
@@ -367,7 +372,7 @@ const projects = [
       "Docker containerization for consistent deployment",
       "Scalable Node.js/Express backend architecture",
     ],
-    image: "/images/projects/talkbot.png",
+    image: "/images/projects/talkbot.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/ai-chat-bot/main/assets/image1.png",
       "https://raw.githubusercontent.com/Dileep2896/ai-chat-bot/main/assets/image2.png",
@@ -392,7 +397,7 @@ const projects = [
       "Built entirely with React hooks and functional components",
       "Smooth animations and responsive UI",
     ],
-    image: "/images/projects/timer_game.png",
+    image: "/images/projects/timer_game.webp",
     gallery: [
       "https://raw.githubusercontent.com/Dileep2896/react-timer-game/main/public/project.png",
     ],
@@ -415,11 +420,12 @@ const projects = [
       "Workout plan builder with custom routines",
       "Modern responsive UI with Tailwind CSS",
     ],
-    image: "/images/projects/gymgrit.png",
-    gallery: ["/images/projects/gymgrit.png"],
+    image: "/images/projects/gymgrit.webp",
+    gallery: ["/images/projects/gymgrit.webp"],
     github: "https://github.com/Dileep2896/react-gymgrit",
     demo: null,
     tech: ["React", "Tailwind CSS", "ExerciseDB API"],
+    metrics: "Fitness tracking with workout analytics",
     bg: "bg-[#f0f4f9]",
     gridSize: "small",
   },
@@ -436,7 +442,7 @@ const projects = [
       "Synchronized music playback during chats",
       "Push notifications for new messages",
     ],
-    image: "/images/projects/flutter_chat_app.png",
+    image: "/images/projects/flutter_chat_app.webp",
     gallery: [
       "https://user-images.githubusercontent.com/55010518/148784193-e74b8328-be11-4088-ac1b-a9003d0aacc3.png",
       "https://user-images.githubusercontent.com/55010518/148784750-a6cd8828-03e9-4443-941a-fc947e92eda8.png",
@@ -461,8 +467,8 @@ const projects = [
       "Responsive image display with loading states",
       "Clean Tailwind CSS layout optimized for all screen sizes",
     ],
-    image: "/images/projects/Nasa.png",
-    gallery: ["/images/projects/Nasa.png"],
+    image: "/images/projects/Nasa.webp",
+    gallery: ["/images/projects/Nasa.webp"],
     github: "https://github.com/Dileep2896/reactjs-nasa",
     demo: null,
     tech: ["React", "NASA API", "Tailwind"],
@@ -494,82 +500,82 @@ const abilities = [
 
 const hackathonImgList = [
   {
-    imgPath: "/achievements/hackathon/1.jpg",
+    imgPath: "/achievements/hackathon/1.webp",
   },
   {
-    imgPath: "/achievements/hackathon/2.png",
+    imgPath: "/achievements/hackathon/2.webp",
   },
   {
-    imgPath: "/achievements/hackathon/3.jpg",
+    imgPath: "/achievements/hackathon/3.webp",
   },
   {
-    imgPath: "/achievements/hackathon/4.png",
+    imgPath: "/achievements/hackathon/4.webp",
   },
   {
-    imgPath: "/achievements/hackathon/5.jpg",
+    imgPath: "/achievements/hackathon/5.webp",
   },
   {
-    imgPath: "/achievements/hackathon/6.png",
+    imgPath: "/achievements/hackathon/6.webp",
   },
   {
-    imgPath: "/achievements/hackathon/7.png",
+    imgPath: "/achievements/hackathon/7.webp",
   },
   {
-    imgPath: "/achievements/hackathon/8.png",
+    imgPath: "/achievements/hackathon/8.webp",
   },
   {
-    imgPath: "/achievements/hackathon/9.jpg",
+    imgPath: "/achievements/hackathon/9.webp",
   },
   {
-    imgPath: "/achievements/hackathon/10.png",
+    imgPath: "/achievements/hackathon/10.webp",
   },
   {
-    imgPath: "/achievements/hackathon/11.png",
+    imgPath: "/achievements/hackathon/11.webp",
   },
   {
-    imgPath: "/achievements/hackathon/12.png",
+    imgPath: "/achievements/hackathon/12.webp",
   },
 ];
 
 const examsImgList = [
   {
-    imgPath: "/achievements/exams/1.png",
+    imgPath: "/achievements/exams/1.webp",
   },
   {
-    imgPath: "/achievements/exams/2.jpg",
+    imgPath: "/achievements/exams/2.webp",
   },
   {
-    imgPath: "/achievements/exams/3.jpg",
+    imgPath: "/achievements/exams/3.webp",
   },
   {
-    imgPath: "/achievements/exams/4.png",
+    imgPath: "/achievements/exams/4.webp",
   },
   {
-    imgPath: "/achievements/exams/5.png",
+    imgPath: "/achievements/exams/5.webp",
   },
   {
-    imgPath: "/achievements/exams/6.jpg",
+    imgPath: "/achievements/exams/6.webp",
   },
 ];
 
 const techImgList = [
   {
-    imgPath: "/achievements/technical/1.jpg",
+    imgPath: "/achievements/technical/1.webp",
   },
   {
-    imgPath: "/achievements/technical/2.png",
+    imgPath: "/achievements/technical/2.webp",
   },
   {
-    imgPath: "/achievements/technical/3.jpeg",
+    imgPath: "/achievements/technical/3.webp",
   },
   {
-    imgPath: "/achievements/technical/4.jpeg",
+    imgPath: "/achievements/technical/4.webp",
   },
   {
-    imgPath: "/achievements/technical/5.jpeg",
+    imgPath: "/achievements/technical/5.webp",
   },
   {
-    imgPath: "/achievements/technical/6.jpeg",
+    imgPath: "/achievements/technical/6.webp",
   },
 ];
 
@@ -669,7 +675,7 @@ const expCards = [
   {
     review:
       "RIT (Rochester Institute of Technology) is a renowned research university recognized for its innovation in computing, engineering, and immersive technologies.",
-    logoPath: "/images/logo1.png",
+    logoPath: "/images/logo1.webp",
     title: "Research Assistant, RIT",
     date: "Aug 2024 – Present",
     location: "Rochester, NY",
@@ -688,7 +694,7 @@ const expCards = [
   {
     review:
       "EVon Energy is a mobility-tech startup focused on simplifying electric vehicle charging by building scalable infrastructure and real-time navigation tools.",
-    logoPath: "/images/logo2.png",
+    logoPath: "/images/logo2.webp",
     title: "Founder – Software Engineer, EVon Energy",
     date: "Aug 2022 – Jul 2023",
     location: "Bangalore, India",
@@ -707,7 +713,7 @@ const expCards = [
   {
     review:
       "Impactional Games is a software development company specializing in building interactive gaming applications and digital products for external clients.",
-    logoPath: "/images/logo3.png",
+    logoPath: "/images/logo3.webp",
     title: "Flutter Developer Intern, Impactional",
     date: "Jan 2022 – Apr 2022",
     location: "Remote",
@@ -726,7 +732,7 @@ const expCards = [
   {
     review:
       "Hilspade is a sports analytics startup delivering real-time statistical insights for badminton players, enhancing gameplay analysis and performance tracking.",
-    logoPath: "/images/logo4.png",
+    logoPath: "/images/logo4.webp",
     title: "Android Developer Intern, Hilspade",
     date: "Sept 2021 – Jan 2022",
     location: "Bangalore, India",
@@ -745,7 +751,7 @@ const expCards = [
   {
     review:
       "Pranamitra Consulting is a matchmaking startup offering matrimonial web platforms that connect individuals across India through data-driven compatibility systems.",
-    logoPath: "/images/logo5.png",
+    logoPath: "/images/logo5.webp",
     title: "Software Engineering Intern, Pranamitra Consulting",
     date: "Jul 2021 – Nov 2021",
     location: "Remote",
@@ -782,6 +788,34 @@ const socialIcons = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Huy Le",
+    title: "AI Researcher",
+    text: "Dileep is very attentive, hardworking, and smart person. He's always delivering above and beyond. He has helped us a lot with the interview for the student incubator program for the tech part and financial part. You should definitely work with this guy. His commitment will help you a lot.",
+  },
+  {
+    name: "Nitish Chandrashekar",
+    title: "MS Computer Science @ RIT | ML & Big Data",
+    text: "I've had the pleasure of working alongside Dileep during our Master's program at RIT, and I can't say enough good things about him. From day one, I was impressed by how he approached technical challenges with both expertise and genuine enthusiasm. What really stands out about Dileep is his talent for mobile app development.",
+  },
+  {
+    name: "Shehab Saleh",
+    title: "BS Mechatronics Engineering @ RIT",
+    text: "It gives me great pleasure to provide this recommendation for Dileep Kumar Sharma, a devoted and accomplished software engineer. I have previously had the chance to work with him and I have witnessed firsthand his proficiency with contemporary web technologies like AWS, Next.js, and MERN stack among others.",
+  },
+];
+
+const skillCategories = [
+  { category: "Frontend", skills: ["React", "Next.js", "HTML/CSS", "Tailwind", "Three.js"] },
+  { category: "Mobile", skills: ["Flutter", "React Native", "Android (Kotlin/Java)"] },
+  { category: "Backend", skills: ["Node.js", "Express", "FastAPI", "Django"] },
+  { category: "Cloud & DevOps", skills: ["AWS (EC2, S3, Lambda)", "Docker", "CI/CD"] },
+  { category: "Databases", skills: ["MongoDB", "PostgreSQL", "Firebase", "Redis"] },
+  { category: "Languages", skills: ["JavaScript", "TypeScript", "Python", "Dart", "Java", "Kotlin", "C++"] },
+  { category: "Tools", skills: ["Git", "Figma", "Jira", "Postman"] },
+];
+
 export {
   words,
   abilities,
@@ -794,4 +828,6 @@ export {
   navLinks,
   projects,
   examsImgList,
+  testimonials,
+  skillCategories,
 };

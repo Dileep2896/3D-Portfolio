@@ -4,8 +4,8 @@ import TitleHeader from "../components/TitleHeader";
 
 const CertificationSection = () => {
   return (
-    <section id="achievements" className="md:my-20 my-10 relative">
-      <div className="md:mt-60 mt-20">
+    <section id="achievements" className="md:my-20 my-0 relative">
+      <div className="md:mt-20 mt-5">
         <TitleHeader title="Achievements" sub="Checkout my amazing" />
         <AchievementsMarquee imageList={hackathonImgList} title="Hackathon" />
         <AchievementsMarquee imageList={examsImgList} title="Exams" />

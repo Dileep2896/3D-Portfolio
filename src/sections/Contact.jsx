@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { FaEnvelope } from "react-icons/fa";
 import TitleHeader from "../components/TitleHeader";
 
 const Contact = () => {
@@ -57,6 +58,18 @@ const Contact = () => {
               id="my-cal-inline-30min"
               style={{ width: "100%", minHeight: "600px" }}
             />
+          </div>
+
+          {/* Mailto fallback */}
+          <div className="flex flex-col items-center gap-3 mt-10">
+            <p className="text-white-50 text-sm">Or reach out directly</p>
+            <a
+              href="mailto:dkus2896@gmail.com"
+              className="contact-mailto-btn"
+            >
+              <FaEnvelope className="text-sm" />
+              <span>dkus2896@gmail.com</span>
+            </a>
           </div>
         </div>
       </div>

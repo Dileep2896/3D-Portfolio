@@ -100,7 +100,7 @@ const ProjectBentoCard = ({ project, onClick }) => {
 
         {/* Image */}
         <div className={`project-card-image ${imgHeightClass}`}>
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title} loading="lazy" />
         </div>
 
         {/* Content */}
@@ -109,7 +109,13 @@ const ProjectBentoCard = ({ project, onClick }) => {
             {project.title}
           </h3>
 
-          {isLarge && (
+          {project.metrics && (
+            <p className="project-metrics-badge mb-2">
+              {project.metrics}
+            </p>
+          )}
+
+          {isLarge && !project.metrics && (
             <p className="text-white-50 text-sm leading-relaxed mb-3 line-clamp-1">
               {project.description}
             </p>

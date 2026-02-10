@@ -540,14 +540,15 @@ section {
   }
 
 
-  .tech-card-animated-bg {
-    @apply absolute left-0 bottom-[-100%] w-full h-full group-hover:bottom-0 transition-all duration-700;
-    background: rgba(37, 214, 255, 0.1);
-    backdrop-filter: blur(10px);
+  .tech-card-tilt {
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(0deg) rotateX(0deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
   }
 
   .tech-card-content {
-    @apply flex flex-col md:justify-center items-center xl:h-[32vh] overflow-hidden relative z-10 group-hover:cursor-grab;
+    @apply flex flex-col md:justify-center items-center overflow-hidden relative z-10;
   }
 
   .tech-grid {
@@ -1312,4 +1313,132 @@ section {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+}
+
+/* ===== Resume Button in NavBar ===== */
+.resume-btn {
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d9ecff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+/* ===== About Section ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.about-edu-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 214, 255, 0.1);
+  border: 1px solid rgba(37, 214, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.about-coursework-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d9ecff;
+}
+
+.about-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d9ecff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-action-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* ===== Testimonials Section ===== */
+.testimonial-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgba(15, 15, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+/* ===== Contact Mailto Button ===== */
+.contact-mailto-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d9ecff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-mailto-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+
+/* ===== Project Metrics Badge ===== */
+.project-metrics-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #25d6ff;
+  opacity: 0.85;
+  line-height: 1.4;
 }
