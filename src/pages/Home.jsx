@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import CertificationSection from "../sections/CertificationSection";
 import NavBar from "../components/NavBar";
 import Contact from "../sections/Contact";
@@ -15,6 +16,7 @@ import Testimonials from "../sections/Testimonials";
 const Home = () => {
   return (
     <>
+      <SEO path="/" />
       <GradientBackground />
       <NavBar />
       <Hero />

@@ -46,6 +46,7 @@ const BentoExperienceCard = ({ card, xlSpan, mdSpan }) => {
               src={card.logoPath}
               alt={card.title}
               className="w-full h-full object-contain"
+              loading="lazy"
             />
           </div>
           <div className="flex-1 min-w-0">

@@ -12,6 +12,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import GradientBackground from "../components/GradientBackground";
+import SEO from "../components/SEO";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -132,6 +133,12 @@ const ProjectDetail = () => {
 
   return (
     <>
+      <SEO
+        title={project.title}
+        description={project.description}
+        path={`/projects/${project.slug}`}
+        image={project.image}
+      />
       <GradientBackground />
       <section className="project-detail-section px-6 py-16 xl:px-24">
         {/* Back button */}
@@ -185,6 +192,7 @@ const ProjectDetail = () => {
             <img
               src={gallery[activeImage]}
               alt={`${project.title} screenshot ${activeImage + 1}`}
+              loading="lazy"
             />
             {hasMultipleImages && (
               <>
@@ -214,7 +222,7 @@ const ProjectDetail = () => {
                   className={`gallery-thumbnail ${i === activeImage ? "active" : ""}`}
                   onClick={() => setActiveImage(i)}
                 >
-                  <img src={img} alt={`Thumbnail ${i + 1}`} />
+                  <img src={img} alt={`Thumbnail ${i + 1}`} loading="lazy" />
                 </button>
               ))}
             </div>

@@ -5,6 +5,7 @@ const ImageIcon = ({ icon }) => {
         src={icon.imgPath}
         alt={icon.name}
         className="w-auto object-contain h-[150px] sm:h-[170px] md:h-[200px]"
+        loading="lazy"
       />
     </div>
   );

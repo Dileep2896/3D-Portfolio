@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { socialIcons } from "../constants";
 import { FaEnvelope, FaMapMarkerAlt, FaFileDownload } from "react-icons/fa";
 
@@ -7,6 +8,7 @@ const Footer = () => {
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -41,9 +43,15 @@ const Footer = () => {
             <ul className="footer-nav-list">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="footer-nav-link">
-                    {link.name}
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link to={link.href} className="footer-nav-link">
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a href={link.href} className="footer-nav-link">
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

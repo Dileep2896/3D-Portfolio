@@ -37,6 +37,10 @@ const navLinks = [
     name: "Achievements",
     link: "#achievements",
   },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
 ];
 
 const words = [
@@ -770,6 +774,198 @@ const expCards = [
 ];
 
 
+const blogPosts = [
+  {
+    slug: "building-storyforge",
+    title:
+      "How I Built an AI That Creates Stories You Can See, Hear, and Steer",
+    date: "2026-03-14",
+    category: "Hackathon",
+    tags: ["AI", "Gemini", "Google Cloud", "Hackathon", "ADK", "Veo", "Imagen"],
+    image: "/images/blog/storyforge-ui.png",
+    readTime: 8,
+    excerpt:
+      "Building StoryForge for the Gemini Live Agent Challenge: a multimodal AI story engine that turns your ideas into illustrated, narrated, interactive stories using Google's latest AI.",
+    github: "https://github.com/Dileep2896/storyforge",
+    devpost: "",
+    demo: "",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Have you ever tried telling a story with AI and felt like something was missing? You get a wall of text, maybe a generic image, and that's it. No voice, no visuals that match the mood, no way to jump in and change what happens next. I kept running into this, and it honestly bugged me. Stories are supposed to be alive. They have rhythm, imagery, surprise. So when the Gemini Live Agent Challenge dropped, I saw my chance to build something that actually felt like storytelling.",
+      },
+      {
+        type: "heading",
+        content: "What is StoryForge?",
+      },
+      {
+        type: "text",
+        content:
+          "StoryForge is a multimodal AI story engine. You give it a prompt, a genre, a mood, and it doesn't just write a story. It illustrates every chapter with AI-generated images, narrates the whole thing with expressive AI voice, and (this is the part I'm most proud of) lets you steer what happens next in real time through Director Mode.",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "4", label: "AI Agents" },
+          { value: "3", label: "Output Modalities" },
+          { value: "6", label: "Art Styles" },
+          { value: "RT", label: "Real-time Streaming" },
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "Director Mode is where things get interesting. Instead of passively reading, you can intervene at any chapter: change the setting, introduce a new character, shift the tone entirely. The AI picks up your direction and weaves it into the narrative without breaking continuity. It's collaborative storytelling with an AI that actually listens.",
+      },
+      {
+        type: "quote",
+        content:
+          "Most AI story tools are one-directional: you prompt, it generates, you read. StoryForge flips that. You become a co-author in real time.",
+      },
+      {
+        type: "heading",
+        content: "The Architecture: Four Agents, One Story",
+      },
+      {
+        type: "text",
+        content:
+          "Under the hood, StoryForge runs on Google's Agent Development Kit (ADK) with four specialized agents coordinated by a root orchestrator:",
+      },
+      {
+        type: "architecture",
+      },
+      {
+        type: "list",
+        items: [
+          "Narrator Agent: Powered by Gemini 2.0 Flash, this agent handles all narrative generation. It takes the user's prompt and genre preferences, writes each scene with consistent characters and plot threads, and streams text in real-time via WebSocket.",
+          "Illustrator Agent: Uses a three-hop pipeline (character sheet extraction, image prompt engineering, then Imagen 3 generation) to create visually consistent illustrations across scenes. A character description cache ensures the same character looks the same throughout the story.",
+          "TTS Agent: Converts the narrative text into expressive speech using Google Cloud Text-to-Speech with studio-quality voices. Audio generates concurrently for all scenes.",
+          "Director Agent: The brain behind Director Mode. It analyzes the full story text and outputs structured JSON covering narrative arc, character analysis, tension levels, and visual style reasoning. This powers the sidebar that makes the AI's creative process visible.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "How It All Streams Together",
+      },
+      {
+        type: "text",
+        content:
+          "The key insight behind StoryForge is interleaved output. Instead of generating all text, then all images, then all audio sequentially, the modalities weave together as they complete. Here's what a typical generation looks like:",
+      },
+      {
+        type: "interleave",
+      },
+      {
+        type: "text",
+        content:
+          "The Narrator runs first (sequential phase), then the Illustrator, Director, and TTS agents all run in parallel to minimize latency. The frontend is built with React and Vite, using WebSocket for real-time streaming. As the backend generates each scene, text, images, and audio stream to the client progressively. You don't wait for the whole story to finish before you start reading.",
+      },
+      {
+        type: "heading",
+        content: "Tech Stack",
+      },
+      {
+        type: "list",
+        items: [
+          "Backend: Python, FastAPI, Google ADK, Gemini 2.0 Flash, Imagen 3, Google Cloud TTS",
+          "Frontend: React, Vite, Tailwind CSS",
+          "Infrastructure: Google Cloud Run, Firebase Hosting, Cloud Firestore, Cloud Storage",
+          "Key APIs: Gemini API, Vertex AI (Imagen 3), Cloud Text-to-Speech",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Why Creative Storytelling?",
+      },
+      {
+        type: "text",
+        content:
+          "When I saw the hackathon categories, the Creative Storyteller track clicked immediately. I've always been drawn to projects where technology meets creativity. But beyond personal interest, I thought this was where multimodal AI could really shine. Text-only story generation is a solved problem at this point. The hard part, the interesting part, is orchestrating multiple AI modalities into a single coherent experience. That's what StoryForge tries to do.",
+      },
+      {
+        type: "text",
+        content:
+          "Plus, I knew Director Mode would be a differentiator. Most AI story tools are one-directional: you prompt, it generates, you read. Making it interactive, letting the user become a co-author in real time, felt like a natural extension that most projects wouldn't attempt.",
+      },
+      {
+        type: "heading",
+        content: "The Hard Parts",
+      },
+      {
+        type: "text",
+        content:
+          "I'll be honest, this project humbled me in a few places. Here's what tripped me up:",
+      },
+      {
+        type: "list",
+        items: [
+          "Agent coordination: Getting four agents to work in sequence without stepping on each other was harder than expected. The Story Agent needs to finish a chapter before the Image Agent can generate the illustration, but the Audio Agent can start working on earlier chapters in parallel. Getting this pipeline right took a lot of debugging.",
+          "Image prompt engineering: Imagen 3 is powerful, but getting consistent character appearances across chapters was tricky. A character described in Chapter 1 might look completely different in Chapter 3. I ended up building a character description cache that gets appended to every image prompt.",
+          "WebSocket reliability: WebSocket connections are simple in theory but fragile in practice. Connection drops, buffering issues, and retry logic ate up more time than I'd like to admit.",
+          "Director Mode continuity: When a user makes a dramatic intervention (like changing the genre mid-story), the AI has to reconcile the existing narrative with the new direction. Early versions would just ignore previous plot points. Getting the Director Agent to truly respect what came before while honoring the new direction was the trickiest prompt engineering challenge of the project.",
+        ],
+      },
+      {
+        type: "quote",
+        content:
+          "The Illustrator was generating completely different-looking characters every chapter. The fix? A persistent character sheet that accumulates across story continuations, appended to every image prompt.",
+      },
+      {
+        type: "heading",
+        content: "What I Learned",
+      },
+      {
+        type: "list",
+        items: [
+          "ADK makes multi-agent orchestration genuinely approachable. Before this, I'd been stitching agents together manually with custom code. ADK's structured approach saved me hours.",
+          "Multimodal AI is more than just calling multiple APIs. The real work is in the coordination layer, making sure the outputs feel like they belong together.",
+          "Streaming changes everything about the UX. The difference between waiting 30 seconds for a complete story vs. watching it unfold in real time is enormous. It makes the experience feel alive.",
+          "Start with the hardest problem first. I'm glad I tackled Director Mode early instead of treating it as a nice-to-have. It ended up being the feature that makes StoryForge feel different from other story generators.",
+        ],
+      },
+      {
+        type: "heading",
+        content: "What's Next",
+      },
+      {
+        type: "text",
+        content:
+          "Post-hackathon, I want to push StoryForge further. Some things on my list:",
+      },
+      {
+        type: "list",
+        items: [
+          "Video generation with Veo 2 for key story moments",
+          "Multiplayer Director Mode where multiple users can co-direct a story",
+          "Story persistence and sharing, so you can save and share your creations",
+          "More genre-specific voice profiles and illustration styles",
+        ],
+      },
+      {
+        type: "heading",
+        content: "Try It Out",
+      },
+      {
+        type: "text",
+        content:
+          "StoryForge is open source. If you want to check it out, play with it, or build on it, here are the links:",
+      },
+      {
+        type: "list",
+        items: [
+          "GitHub: https://github.com/Dileep2896/storyforge",
+        ],
+      },
+      {
+        type: "callout",
+        content:
+          "This project was built for the Gemini API Developer Competition (Gemini Live Agent Challenge) using Google's AI technologies including Gemini 2.0 Flash, Imagen 3, Google Cloud Text-to-Speech, and the Agent Development Kit (ADK). #GeminiLiveAgentChallenge",
+      },
+    ],
+  },
+];
+
 const socialIcons = [
   {
     name: "github",
@@ -830,4 +1026,5 @@ export {
   examsImgList,
   testimonials,
   skillCategories,
+  blogPosts,
 };

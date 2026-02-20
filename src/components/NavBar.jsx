@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";
 import { navLinks } from "../constants";
 
@@ -27,10 +28,17 @@ const NavBar = () => {
           <ul>
             {navLinks.map(({ link, name }) => (
               <li key={name} className="group">
-                <a href={link}>
-                  <span>{name}</span>
-                  <span className="underline" />
-                </a>
+                {link.startsWith("/") ? (
+                  <Link to={link}>
+                    <span>{name}</span>
+                    <span className="underline" />
+                  </Link>
+                ) : (
+                  <a href={link}>
+                    <span>{name}</span>
+                    <span className="underline" />
+                  </a>
+                )}
               </li>
             ))}
           </ul>

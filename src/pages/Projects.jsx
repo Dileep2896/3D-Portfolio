@@ -13,6 +13,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import GradientBackground from "../components/GradientBackground";
+import SEO from "../components/SEO";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -251,6 +252,11 @@ const Projects = () => {
 
   return (
     <>
+      <SEO
+        title="Projects"
+        description="Explore 14+ projects built by Dileep Kumar Sharma spanning full-stack web apps, Flutter mobile apps, AI tools, and more."
+        path="/projects"
+      />
       <GradientBackground />
       <section ref={sectionRef} className="px-6 py-16 xl:px-24 relative z-1">
         <div ref={headingRef} className="flex items-center gap-4 mb-10">
