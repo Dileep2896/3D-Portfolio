@@ -356,13 +356,15 @@ const BlogPost = () => {
         </div>
 
         {/* Cover Image */}
-        <div ref={coverRef} className="blog-header-wrap blog-cover-wrap mb-10">
-          <div className="project-gallery">
-            <div className="project-gallery-main">
-              <img src={post.image} alt={post.title} loading="lazy" />
+        {post.image && (
+          <div ref={coverRef} className="blog-header-wrap blog-cover-wrap mb-10">
+            <div className="project-gallery">
+              <div className="project-gallery-main">
+                <img src={post.image} alt={post.title} loading="lazy" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Article Body + ToC layout */}
         <div className="blog-body-layout">

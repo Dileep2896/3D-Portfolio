@@ -41,9 +41,11 @@ const BlogCard = ({ post, onClick }) => {
       <div ref={glowRef} className="tilt-glow-overlay" />
 
       {/* Cover Image */}
-      <div className="blog-card-image">
-        <img src={post.image} alt={post.title} loading="lazy" />
-      </div>
+      {post.image && (
+        <div className="blog-card-image">
+          <img src={post.image} alt={post.title} loading="lazy" />
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 p-5">
