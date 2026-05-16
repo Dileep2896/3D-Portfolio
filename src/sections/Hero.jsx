@@ -49,13 +49,14 @@ const Hero = () => {
               <h1>And Scale Without Breaking</h1>
             </div>
             <p className="text-white-50 md:text-md text-sm relative z-10 pointer-events-none max-w-3xl">
-              Hi, I'm Dileep. A full-stack and mobile engineer with experience
-              in production-ready systems and scalable architecture. I'm
-              currently exploring new grad SDE opportunities for 2026.
+              Hi, I'm Dileep. A full-stack and AI engineer building
+              production-ready systems across web, mobile, and multimodal AI.
+              Recently shipped Reveria — a voice-driven storybook agent on
+              Gemini Live. MS CS, RIT — open to SDE and AI engineer roles.
             </p>
             <Button
               className="md:w-100 md:h-16 w-full max-w-90 h-10"
-              text="Stats that tells my story"
+              text="Stats that tell my story"
               onclick={(e) => {
                 e.preventDefault();
 

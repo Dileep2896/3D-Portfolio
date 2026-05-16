@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Layout order: interleave projects with accent cards to fill gaps
 const gridItems = [
   // Row 1: two large cards
+  { type: "project", slug: "reveria" },
   { type: "project", slug: "polychat" },
   { type: "project", slug: "soocily" },
   // Row 2: three medium + one accent

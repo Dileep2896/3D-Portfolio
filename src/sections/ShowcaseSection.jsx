@@ -54,9 +54,32 @@ const ShowcaseSection = () => {
           {/* LEFT */}
           <div className="first-project-wrapper" ref={project1Ref}>
             <div className="image-wrapper">
-              <img src="/images/projects/polychat.webp" alt="polychat" loading="lazy" />
+              <img src="/images/projects/reveria.jpg" alt="reveria" loading="lazy" />
             </div>
             <div className="text-content">
+              <h2>
+                <a
+                  href="https://github.com/Dileep2896/reveria"
+                  target="_blank"
+                >
+                  Reveria — Voice-Driven AI Storybook Generator
+                </a>
+              </h2>
+              <p className="text-white-50 md:text-xl">
+                A real-time AI storybook platform where you co-direct
+                illustrated stories with a Gemini Live voice agent. Built on
+                Gemini 2.x native interleaved text+image generation, with a
+                Google ADK agent pipeline streaming each scene's narration,
+                art, and audio in parallel over WebSockets.
+              </p>
+            </div>
+          </div>
+          {/* RIGHT */}
+          <div className="project-list-wrapper overflow-hidden">
+            <div className="project" ref={project2Ref}>
+              <div className="image-wrapper">
+                <img src="/images/projects/polychat.webp" alt="polychat" loading="lazy" />
+              </div>
               <h2>
                 <a
                   href="https://github.com/Dileep2896/PolyChat"
@@ -65,17 +88,9 @@ const ShowcaseSection = () => {
                   PolyChat — Language Learning Social Platform
                 </a>
               </h2>
-              <p className="text-white-50 md:text-xl">
-                A real-time language exchange platform built with React.js
-                (Vite), Express.js, and MongoDB. Features include authenticated
-                chat/video using Stream SDKs, state management with Zustand, and
-                a responsive UI with Tailwind CSS + DaisyUI.
-              </p>
             </div>
-          </div>
-          {/* RIGHT */}
-          <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={project2Ref}>
+
+            <div className="project" ref={project3Ref}>
               <div className="image-wrapper showcase-card-dark">
                 <img src="/images/projects/interviewer.webp" alt="" loading="lazy" />
               </div>
@@ -85,20 +100,6 @@ const ShowcaseSection = () => {
                   target="_blank"
                 >
                   Interviewer - Level Up Your Interview with Real-Time Practice
-                </a>
-              </h2>
-            </div>
-
-            <div className="project" ref={project3Ref}>
-              <div className="image-wrapper showcase-card-dark">
-                <img src="/images/projects/gooddeeds.webp" alt="gooddeeds" loading="lazy" />
-              </div>
-              <h2>
-                <a
-                  href="https://github.com/Dileep2896/Hackathon"
-                  target="_blank"
-                >
-                  Good Deeds - Community-focused service marketplace
                 </a>
               </h2>
             </div>

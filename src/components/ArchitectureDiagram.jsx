@@ -69,7 +69,7 @@ const ArchitectureDiagram = () => {
           />
           <AgentBox
             label="TTS Agent"
-            sublabel="Cloud TTS"
+            sublabel="Gemini Native Audio"
             color="rgba(244, 114, 182, 0.6)"
           />
         </div>
@@ -96,7 +96,8 @@ const ArchitectureDiagram = () => {
         <div className="arch-services-row">
           <ServiceBox label="Gemini 2.0 Flash" sublabel="Vertex AI" />
           <ServiceBox label="Imagen 3" sublabel="Vertex AI" />
-          <ServiceBox label="Cloud TTS" sublabel="Text-to-Speech" />
+          <ServiceBox label="Gemini Native Audio" sublabel="Narration TTS" />
+          <ServiceBox label="Gemini Live API" sublabel="Director Chat" />
         </div>
       </div>
 

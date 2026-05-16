@@ -61,18 +61,22 @@ const AboutSection = () => {
           {/* Left — Bio */}
           <div className="about-bio flex flex-col gap-6">
             <p className="text-white-50 text-base md:text-lg leading-relaxed">
-              Hey! I'm Dileep. I've been writing code for about 7 years now,
+              Hey! I'm Dileep. I've been writing code for about 8 years now,
               mostly building web and mobile apps with React, Flutter, and
               Node.js. A couple years ago I co-founded an EV charging startup
               that hit a $1.5M valuation, which taught me more about shipping
               real products than any class ever could.
             </p>
             <p className="text-white-50 text-base md:text-lg leading-relaxed">
-              Right now I'm finishing up my Master's in CS at RIT while working
-              as a Software Engineer Co-Op at Metis AI. I love figuring out how
-              to make things work well, whether that's a drag-and-drop scheduling
-              system or an offline-first mobile app for field technicians.
-              Hackathons are my thing too, 12 wins and counting.
+              I recently completed my Master's in CS at RIT and spent the
+              last year as a Software Engineer Co-Op at Metis AI. Lately I've
+              been deep in multimodal AI — most recently shipping Reveria, a
+              voice-driven storybook generator built on the Gemini Live API,
+              Google ADK agents, and Vertex AI Imagen. I love figuring out
+              how to make things work well, whether that's a drag-and-drop
+              scheduling system, an offline-first mobile app for field
+              technicians, or a real-time agent pipeline. Hackathons are my
+              thing too — 12 wins and counting.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-2">
@@ -113,7 +117,7 @@ const AboutSection = () => {
 
             <div className="flex flex-col gap-2 mb-5">
               <p className="text-white-50 text-sm">
-                Expected Spring 2026 &middot; GPA: 3.4 / 4.0
+                Graduated Spring 2026 &middot; GPA: 3.4 / 4.0
               </p>
             </div>
 

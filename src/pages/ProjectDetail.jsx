@@ -186,6 +186,20 @@ const ProjectDetail = () => {
           </div>
         </div>
 
+        {/* Demo video */}
+        {project.video && (
+          <div className="project-video">
+            <iframe
+              src={project.video}
+              title={`${project.title} — demo video`}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        )}
+
         {/* Gallery */}
         <div ref={galleryRef} className="project-gallery">
           <div className="project-gallery-main">

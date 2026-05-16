@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE_URL = "https://dileepkumarsharma.com";
-const DEFAULT_TITLE = "Dileep Kumar Sharma — Full-Stack & Mobile Engineer";
+const DEFAULT_OG_IMAGE = "/og-image.jpg";
+const DEFAULT_TITLE = "Dileep Kumar Sharma — Full-Stack & AI Engineer";
 const DEFAULT_DESC =
-  "Full-Stack & Mobile Engineer. MS CS @ RIT. Building production-ready web and mobile applications with React, Flutter, Node.js, and AWS.";
+  "Full-Stack & AI Engineer. MS CS, RIT. Building production-ready web, mobile, and multimodal AI systems with React, TypeScript, FastAPI, Google Cloud, and the Gemini Live API.";
 
 const SEO = ({
   title,
@@ -21,7 +22,7 @@ const SEO = ({
     ? image.startsWith("http")
       ? image
       : `${SITE_URL}${image}`
-    : `${SITE_URL}/logo.svg`;
+    : `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 
   return (
     <Helmet>

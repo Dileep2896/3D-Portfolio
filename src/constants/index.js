@@ -55,7 +55,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 7, suffix: "", label: "Years of Development" },
+  { value: 8, suffix: "", label: "Years of Development" },
   {
     value: 1.5,
     suffix: "M",
@@ -64,10 +64,56 @@ const counterItems = [
   },
   { value: 3, suffix: "", label: "Internship Experience" },
   { value: 50, suffix: "+", label: "Projects Built" },
-  { value: 12, suffix: "x", label: "Hackthon Winner" },
+  { value: 12, suffix: "x", label: "Hackathon Winner" },
 ];
 
 const projects = [
+  {
+    title: "Reveria — Voice-Driven AI Storybook Generator",
+    slug: "reveria",
+    description:
+      "A real-time AI storybook platform where you co-direct illustrated stories with a Gemini Live voice agent — narration, art, and audio stream in scene-by-scene.",
+    fullDescription:
+      "Reveria turns a single prompt into a fully illustrated, multi-voice audiobook in seconds. Built on Google Gemini 2.x with native interleaved text-and-image output, the platform streams each scene as it's written — image, narration, and audio generated in parallel. A voice-first Director Chat powered by the Gemini Live API lets you brainstorm and steer the story mid-flight through natural conversation. Under the hood: a Google ADK agent pipeline, Vertex AI Imagen, multi-voice TTS, visual-DNA character anchoring for cross-scene consistency, and a resilient FastAPI WebSocket backend deployed on Cloud Run.",
+    features: [
+      "Voice-driven Director Chat — brainstorm with Gemini Live native audio, with native tool calling so the model decides when to start generating",
+      "Native interleaved text + image generation (Gemini 2.x TEXT+IMAGE modality) with Imagen fallback",
+      "Per-scene streaming pipeline — images, narration, and TTS audio fire in parallel as each scene completes",
+      "Visual DNA character anchoring keeps faces, outfits, and color palettes consistent across scenes",
+      "Multi-voice TTS narration with per-character voices and proportional silence on segment failure",
+      "Real-time WebSocket session with mid-generation steering and live Director commentary",
+      "Social features: public Explore feed, ratings, comments, likes, and PDF export",
+      "Production resilience: per-user circuit breakers, atomic Firestore transactions, retry-with-jitter, GCS signed-URL fallback",
+    ],
+    image: "/images/projects/reveria.jpg",
+    video: "https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID",
+    gallery: [
+      "/images/projects/reveria/02-story-generation.jpg",
+      "/images/projects/reveria/04-director-chat.jpg",
+      "/images/projects/reveria/01-template-chooser.jpg",
+      "/images/projects/reveria/03-book-details.jpg",
+      "/images/projects/reveria/06-explore-page.jpg",
+      "/images/projects/reveria/05-subscription-usage.jpg",
+      "/images/projects/reveria/07-settings-dialog.jpg",
+      "/images/projects/reveria/system-architecture.jpg",
+      "/images/projects/reveria/director-chat-flow.jpg",
+    ],
+    github: "https://github.com/Dileep2896/reveria",
+    demo: null,
+    tech: [
+      "React",
+      "FastAPI",
+      "Gemini Live API",
+      "Vertex AI (Imagen)",
+      "Google ADK",
+      "Firestore",
+      "Cloud Run",
+      "WebSockets",
+    ],
+    metrics: "Built for the Gemini Live Agent Hackathon",
+    bg: "bg-[#ede2ff]",
+    gridSize: "large",
+  },
   {
     title: "PolyChat — Language Learning Social Platform",
     slug: "polychat",
@@ -95,7 +141,7 @@ const projects = [
       "https://raw.githubusercontent.com/Dileep2896/PolyChat/main/screenshots/signup.png",
     ],
     github: "https://github.com/Dileep2896/PolyChat",
-    demo: "https://polychat.vercel.app/",
+    demo: null,
     tech: ["React", "Express", "MongoDB", "Zustand", "Stream SDK"],
     metrics: "Real-time chat with 10+ language pairs",
     bg: "bg-[#fff]",
@@ -778,59 +824,73 @@ const blogPosts = [
   {
     slug: "building-storyforge",
     title:
-      "How I Built an AI That Creates Stories You Can See, Hear, and Steer",
+      "Building Reveria: An AI Story Engine with Gemini",
     date: "2026-03-14",
     category: "Hackathon",
-    tags: ["AI", "Gemini", "Google Cloud", "Hackathon", "ADK", "Veo", "Imagen"],
-    image: "/images/blog/storyforge-ui.png",
-    readTime: 8,
+    tags: ["AI", "Gemini", "Google Cloud", "Hackathon", "ADK", "Imagen", "Live API"],
+    image: "/images/blog/02-story-generation.jpg",
+    readTime: 20,
     excerpt:
-      "Building StoryForge for the Gemini Live Agent Challenge: a multimodal AI story engine that turns your ideas into illustrated, narrated, interactive stories using Google's latest AI.",
+      "How I built Reveria for the Gemini Live Agent Challenge: a multimodal AI story engine where you brainstorm with a voice Director, watch four agents generate illustrated storybooks in real time, and steer the narrative as it unfolds.",
     github: "https://github.com/Dileep2896/storyforge",
     devpost: "",
     demo: "",
     sections: [
+      // --- What is Reveria? ---
       {
         type: "text",
         content:
-          "Have you ever tried telling a story with AI and felt like something was missing? You get a wall of text, maybe a generic image, and that's it. No voice, no visuals that match the mood, no way to jump in and change what happens next. I kept running into this, and it honestly bugged me. Stories are supposed to be alive. They have rhythm, imagery, surprise. So when the Gemini Live Agent Challenge dropped, I saw my chance to build something that actually felt like storytelling.",
+          "Describe a story. Watch it come alive. That's the pitch. Here's how I actually built it.",
       },
       {
         type: "heading",
-        content: "What is StoryForge?",
+        content: "What is Reveria?",
       },
       {
         type: "text",
         content:
-          "StoryForge is a multimodal AI story engine. You give it a prompt, a genre, a mood, and it doesn't just write a story. It illustrates every chapter with AI-generated images, narrates the whole thing with expressive AI voice, and (this is the part I'm most proud of) lets you steer what happens next in real time through Director Mode.",
+          'Reveria is an interactive story engine. You type (or say) something like "a noir detective story in a rain-soaked city at midnight," and it generates an illustrated storybook in real time: narrative text, scene illustrations, voice narration, and an interactive flipbook you can page through. Everything streams in live as four AI agents work in parallel.',
       },
       {
         type: "stats",
         items: [
           { value: "4", label: "AI Agents" },
-          { value: "3", label: "Output Modalities" },
-          { value: "6", label: "Art Styles" },
-          { value: "RT", label: "Real-time Streaming" },
+          { value: "30+", label: "Art Styles" },
+          { value: "9", label: "Story Templates" },
+          { value: "8", label: "Languages" },
         ],
       },
       {
         type: "text",
         content:
-          "Director Mode is where things get interesting. Instead of passively reading, you can intervene at any chapter: change the setting, introduce a new character, shift the tone entirely. The AI picks up your direction and weaves it into the narrative without breaking continuity. It's collaborative storytelling with an AI that actually listens.",
-      },
-      {
-        type: "quote",
-        content:
-          "Most AI story tools are one-directional: you prompt, it generates, you read. StoryForge flips that. You become a co-author in real time.",
-      },
-      {
-        type: "heading",
-        content: "The Architecture: Four Agents, One Story",
+          'What makes it different from "give me a story" ChatGPT wrappers is the Director Chat. You open a voice conversation with an AI Director character, brainstorm your story idea out loud, and when the Director decides you\'re ready, it triggers generation automatically. During generation, the Director watches each scene and offers creative analysis in real time. It suggests what should happen next, and the Narrator picks up that suggestion in the following scene. Two agents shaping a story together, with you steering.',
       },
       {
         type: "text",
         content:
-          "Under the hood, StoryForge runs on Google's Agent Development Kit (ADK) with four specialized agents coordinated by a root orchestrator:",
+          "Beyond generation, Reveria is a full application: a Library for your saved stories, an Explore page for discovering published work from other users, Reading Mode with karaoke-style narration, PDF export, 8-language support, 9 story templates, 30+ art styles, social features (likes, ratings, comments), and share links for public viewing.",
+      },
+      {
+        type: "quote",
+        content:
+          "This isn't a single API call. It's a multi-agent pipeline built on Google's ADK, with Gemini 2.0 Flash for text, Imagen 3 for illustrations, Gemini Live API for voice, and Gemini Native Audio for narration. Each agent runs at a different temperature tuned for its task.",
+      },
+      {
+        type: "image",
+        src: "/images/blog/01-template-chooser.jpg",
+        alt: "Reveria template chooser with 9 story templates",
+        caption: "9 story templates, from Storybook to Manga to Noir Detective",
+      },
+
+      // --- System Architecture ---
+      {
+        type: "heading",
+        content: "System Architecture",
+      },
+      {
+        type: "text",
+        content:
+          "Reveria runs four specialist agents coordinated by ADK's SequentialAgent. The key design decision: different temperatures for different tasks. Story writing needs high creativity (temp 0.9). Image prompts need precision (temp 0.3). Character extraction needs determinism (temp 0.1). Director analysis needs structured JSON output (temp 0.3). A single Gemini call can't do all of these well.",
       },
       {
         type: "architecture",
@@ -838,20 +898,133 @@ const blogPosts = [
       {
         type: "list",
         items: [
-          "Narrator Agent: Powered by Gemini 2.0 Flash, this agent handles all narrative generation. It takes the user's prompt and genre preferences, writes each scene with consistent characters and plot threads, and streams text in real-time via WebSocket.",
-          "Illustrator Agent: Uses a three-hop pipeline (character sheet extraction, image prompt engineering, then Imagen 3 generation) to create visually consistent illustrations across scenes. A character description cache ensures the same character looks the same throughout the story.",
-          "TTS Agent: Converts the narrative text into expressive speech using Google Cloud Text-to-Speech with studio-quality voices. Audio generates concurrently for all scenes.",
-          "Director Agent: The brain behind Director Mode. It analyzes the full story text and outputs structured JSON covering narrative arc, character analysis, tension levels, and visual style reasoning. This powers the sidebar that makes the AI's creative process visible.",
+          "Narrator Agent (Gemini 2.0 Flash, temp 0.9): writes each scene with consistent characters and plot threads, streams text chunk-by-chunk over WebSocket. Checks a steering queue between scenes for user direction changes.",
+          "Illustrator Agent (Gemini + Imagen 3, temp 0.1-0.3): four-stage hybrid prompt pipeline. Character sheet extraction, character identification, scene composition, then programmatic assembly. Produces visually consistent illustrations across scenes.",
+          "TTS Agent (Gemini Native Audio): audiobook-quality narration that varies tone with mood. Each language gets a voice suited to it. Replaced Cloud TTS for dramatically better expressiveness.",
+          "Director Agent (Gemini Flash, temp 0.3): per-scene live commentary during generation (mood, tension, craft notes, creative suggestions), plus full post-batch analysis of story health, characters, visual style, themes, and emotional arc.",
         ],
-      },
-      {
-        type: "heading",
-        content: "How It All Streams Together",
       },
       {
         type: "text",
         content:
-          "The key insight behind StoryForge is interleaved output. Instead of generating all text, then all images, then all audio sequentially, the modalities weave together as they complete. Here's what a typical generation looks like:",
+          "Each prompt generates exactly one scene. This keeps the feedback loop tight: describe what you want, watch it materialize, steer, repeat. No batch of five scenes where the third one goes off the rails. Everything streams over a single WebSocket. Text arrives chunk-by-chunk, images arrive as each Imagen call completes, audio arrives per-scene, and Director analysis arrives as structured JSON.",
+      },
+      {
+        type: "image",
+        src: "/images/blog/system-architecture.svg",
+        alt: "Reveria system architecture diagram",
+        caption: "Four agents coordinated by ADK's SequentialAgent, with per-scene parallelism",
+      },
+
+      // --- The Build ---
+      {
+        type: "heading",
+        content: "The Build",
+      },
+      {
+        type: "text",
+        content:
+          "Week 1 was about proving the core pipeline. Day 1: can we get Gemini to generate story text, stream it over WebSocket, split it into scenes, and render it in a flipbook? The answer was yes. Day 2 brought the first big challenge: image generation. Imagen 3 produces stunning illustrations, but characters looked completely different across scenes. Day 3 was the Firebase integration marathon: auth, Firestore persistence, save flows, Library, URL routing.",
+      },
+      {
+        type: "text",
+        content:
+          "Week 2 was about solving character consistency (described below), building Director Mode with live commentary, adding templates and art styles, and getting per-scene streaming working so the experience felt truly live.",
+      },
+      {
+        type: "text",
+        content:
+          "Week 3 was the Director Chat integration with the Gemini Live API, the safety and content filtering system, social features, multi-language support, Reading Mode, the CI/CD pipeline, and a lot of polish. The interaction-flow audit at the end caught 9 bugs that would have been embarrassing in production, including silently dropping Live API tool calls and losing user quota on WebSocket disconnects.",
+      },
+
+      // --- Character Consistency ---
+      {
+        type: "heading",
+        content: "The Biggest Challenge: Character Consistency",
+      },
+      {
+        type: "text",
+        content:
+          'This was the hardest technical problem I solved. The naive approach: send scene text to Gemini ("write an image prompt"), get a 100-word prompt, send to Imagen. The problem? Gemini would receive a scene about "Elena, a woman in her late 20s with pale skin, long dark wavy hair, green eyes, wearing a high-collar black Victorian dress" and compress it to "woman in dark dress." Characters changed faces, hair color, and outfits between every scene.',
+      },
+      {
+        type: "text",
+        content:
+          "The fix was a four-stage hybrid prompt pipeline. First, Gemini extracts a structured character sheet with hex color codes, face shapes, and signature items (temp 0.1). Second, it identifies which characters appear in each scene (temp 0.0). Third, it writes ONLY the setting, lighting, and camera angle (temp 0.3), explicitly told not to describe characters. Fourth, we programmatically concatenate character descriptions + anti-drift anchor + scene composition + art style suffix.",
+      },
+      {
+        type: "code",
+        content:
+          'Elena: [gender: woman], [age: late 20s], [skin: pale ivory #F5E6D3],\n[hair: dark wavy #2A1810 shoulder-length], [face: oval, green #4A7C59 eyes,\nhigh cheekbones], [outfit: black #1A1A2E Victorian dress, silver moon pendant],\n[signature items: silver moon pendant, lace gloves],\n[palette: #1A1A2E, #F5E6D3, #4A7C59, #C0C0C0]\n\nIMPORTANT: Render each character EXACTLY as described above.\n\nElena stands at the edge of a moonlit cliff, wind catching her dress.\nFog rolls below, a distant lighthouse beam sweeps across the water.\nLow angle, dramatic backlighting, cinematic digital painting,\nhighly detailed, dramatic volumetric lighting, depth of field.',
+      },
+      {
+        type: "text",
+        content:
+          "The breakthrough moment: characters suddenly looked consistent across 4, 6, 8 scenes. The hex color codes give Imagen specific, unambiguous visual targets instead of subjective descriptions like \"pretty woman in dark clothing.\" We pushed this further with anchor portraits: before generating any scene images, the Illustrator creates a 1:1 close-up portrait of each character via Imagen 3, then feeds it to Gemini Vision for visual DNA extraction (a 100-150 word description of exactly what was rendered). Subsequent scene prompts reference this visual DNA instead of the original text description.",
+      },
+
+      // --- Director Chat ---
+      {
+        type: "heading",
+        content: "Director Chat: Talking to Your Story's AI Director",
+      },
+      {
+        type: "text",
+        content:
+          "This is the feature I'm most excited about. Director Chat is a real-time voice conversation with an AI Director character, built on the Gemini Live API (gemini-live-2.5-flash-native-audio). You speak (or type, for accessibility), the Director responds with personality, and when brainstorming is done, the model calls a generate_story tool with a vivid prompt distilled from your conversation. Both voice and text input are supported seamlessly \u2014 users can switch between them at any time.",
+      },
+      {
+        type: "text",
+        content:
+          "The previous architecture made 3-5 separate Gemini calls per user interaction: one for conversation, one for user speech transcription, one for Director speech transcription, one for intent detection, one for prompt suggestion. The rewrite eliminated all extra calls by using three native Live API features: input/output audio transcription (no separate STT calls), function calling (the model decides when to generate, replacing an external classifier), and context window compression (sliding window handles long brainstorming sessions).",
+      },
+      {
+        type: "text",
+        content:
+          "Voice activity detection was the UX breakthrough. Without it, users had to tap twice per turn (record, then send). With Web Audio's AnalyserNode computing RMS from getFloatTimeDomainData(), we detect speech-to-silence transitions and auto-stop the recorder. The conversation becomes: speak, pause, Director responds, speak again. One tap to start, zero taps per subsequent turn.",
+      },
+      {
+        type: "image",
+        src: "/images/blog/04-director-chat.jpg",
+        alt: "Voice brainstorming with the AI Director",
+        caption: "Voice brainstorming with the Director, then watching generation unfold",
+      },
+      {
+        type: "image",
+        src: "/images/blog/director-chat-flow.svg",
+        alt: "Director Chat flow diagram",
+        caption: "Director Chat uses native Live API features: transcription, tool calling, and context compression",
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "Streaming Audio: Eliminating the Thinking Gap",
+      },
+      {
+        type: "text",
+        content:
+          "The original Director Chat had a noticeable delay between when you stopped speaking and when the Director started responding \u2014 the full audio response had to be collected, encoded as WAV, and sent as a data URL. We fixed this by streaming raw PCM chunks incrementally via WebSocket. A useStreamingAudio hook feeds each chunk into Web Audio API AudioBufferSource nodes scheduled for gapless playback. The Director's voice now starts within 200\u2013400ms instead of 1\u20132 seconds.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        content: "Voice-Reactive Orb & Text Input",
+      },
+      {
+        type: "text",
+        content:
+          "The voice orb is a canvas-based organic visualization \u2014 four overlapping soft blobs blend Dream Violet and Story Amber with gaussian blur, driven by real-time audio amplitude via Web Audio's AnalyserNode. Six visual modes (idle, recording, speaking, loading, watching, waiting) transition smoothly via per-frame color and speed lerping. Asymmetric smoothing (fast attack, slow decay) makes it feel alive. For accessibility, a text input mode lets deaf or hard-of-hearing users type messages to the Director instead of speaking \u2014 seamlessly switching between voice and text at any time. The transcript thread shows all voice interactions as styled chat bubbles, with a toggle to show or hide them.",
+      },
+
+      // --- Per-Scene Streaming ---
+      {
+        type: "heading",
+        content: "Per-Scene Streaming: Making It Feel Alive",
+      },
+      {
+        type: "text",
+        content:
+          "The original pipeline was batch-sequential: Narrator generates ALL scene text, then Illustrator generates ALL images, then TTS generates ALL audio, then Director analyzes. Users stared at a spinner for 15-30 seconds. The rewrite fires image, audio, and Director commentary tasks per-scene as each scene's text completes inside the Narrator loop. Scene 1's image paints in while Scene 2's text is still streaming.",
       },
       {
         type: "interleave",
@@ -859,8 +1032,131 @@ const blogPosts = [
       {
         type: "text",
         content:
-          "The Narrator runs first (sequential phase), then the Illustrator, Director, and TTS agents all run in parallel to minimize latency. The frontend is built with React and Vite, using WebSocket for real-time streaming. As the backend generates each scene, text, images, and audio stream to the client progressively. You don't wait for the whole story to finish before you start reading.",
+          "A module-level asyncio.Semaphore(1) serializes Imagen calls for rate limiting, but they start as soon as each scene's text is ready. The handle_generate runs as asyncio.create_task() so the WebSocket loop stays responsive, and users can send steer messages (\"make it scarier\") during generation. The steering text is pushed to a queue, checked between scenes in the Narrator loop, and injected as a user message so the next scene naturally picks up the new direction.",
       },
+      {
+        type: "text",
+        content:
+          "The Director's live commentary includes a suggestion field that proposes what should happen next. This is stored on shared state and prepended to the Narrator's input for the next scene. The Director doesn't just observe. It drives. It spots an opportunity (\"Reveal that the stranger is her long-lost sister\"), and the Narrator runs with it. A reactive analyst becomes an active creative partner.",
+      },
+      {
+        type: "image",
+        src: "/images/blog/02-story-generation.jpg",
+        alt: "Live story generation with Director analysis panel",
+        caption: "Live story generation with Director analysis panel showing characters, visual style, and creative suggestions",
+      },
+
+      // --- Visual Narratives ---
+      {
+        type: "heading",
+        content: "Visual Narratives: Comics, Manga, and Webtoons",
+      },
+      {
+        type: "text",
+        content:
+          "Templates aren't skins. Each one reshapes the entire pipeline. A Manga template doesn't just swap the art style suffix. It changes the scene composer to use character-dominant framing, activates the text-free image defense, adjusts TTS to narrate only overlay text (not full prose), and shifts the Narrator toward visual storytelling with shorter scene descriptions.",
+      },
+      {
+        type: "text",
+        content:
+          "Comic art styles triggered Imagen to render speech bubbles and garbled AI text into images. Our fix is a triple-layer defense: a positive \"Text-free panel art:\" prefix at the start of the Imagen prompt (where attention weight is highest), explicit composer instructions, and negative constraints at the end. We learned the hard way that putting negative constraints first consumed Imagen's attention budget and pushed character descriptions too far down, degrading consistency. All text overlay is handled by the app itself.",
+      },
+
+      // --- The UI ---
+      {
+        type: "heading",
+        content: "The UI: Glassmorphism Meets Interactive Fiction",
+      },
+      {
+        type: "text",
+        content:
+          "The flipbook uses react-pageflip for realistic page-turn animations in always-spread mode. New stories trigger a choreographed entrance sequence: the book materializes with a brightness bloom at 60%, then the cover flips open in an overlapping motion that starts at 350ms (before the entrance finishes). Earlier iterations had a visible pause between entrance and flip that broke the illusion. The overlap creates one fluid motion.",
+      },
+      {
+        type: "text",
+        content:
+          "We replaced Cloud TTS with Gemini's native audio output for narration. The difference is striking: audiobook-quality narration that varies tone with mood instead of robotic Wavenet voices. Reading Mode adds word-by-word karaoke highlighting synced to the audio, auto-advance between scenes, and bookmarking. The save system uses a three-tier approach: if AI-generated title and cover already exist (background task), save is instant. No spinner, no waiting.",
+      },
+      {
+        type: "text",
+        content:
+          "The Library shows your saved stories as 3D CSS book cards with perspective transforms, spine shadows, and page edges. While a cover generates, the book shows a blur+shimmer overlay. Published stories get a BookDetailsPage with likes, 1-5 star ratings (denormalized on the story doc for zero pop-in), and threaded comments.",
+      },
+      {
+        type: "image",
+        src: "/images/blog/03-book-details.jpg",
+        alt: "Published story with social features",
+        caption: "Published story with character portraits, ratings, and social features",
+      },
+
+      // --- Safety ---
+      {
+        type: "heading",
+        content: "Safety and Content Filtering",
+      },
+      {
+        type: "text",
+        content:
+          "AI models sometimes refuse requests they interpret as inappropriate, and Gemini's refusal text would get rendered as actual story scenes, complete with AI-generated illustrations of the refusal message. Our solution: a pre-pipeline Gemini Flash classifier (temp 0, ~200ms) catches non-story prompts (coding questions, recipes, homework) in any language. It fails open on errors. A post-generation pattern matcher in 6 languages handles edge cases. For borderline content, the Narrator redirects in-character (\"That part of the library is forbidden! Let's explore this mysterious path instead...\") rather than breaking the fourth wall.",
+      },
+
+      // --- Multi-Language ---
+      {
+        type: "heading",
+        content: "Multi-Language Support",
+      },
+      {
+        type: "text",
+        content:
+          "Reveria generates stories in 8 languages: English, Spanish, French, German, Japanese, Hindi, Portuguese, and Chinese. Language flows through SharedPipelineState and touches every agent: Narrator system prompt, TTS voice selection, title generation in the story's language, content filtering patterns, and Director Chat personality. Making it a field on shared state was the cleanest pattern. Adding a new language is a one-line addition to the voice mapping.",
+      },
+
+      // --- Cloud Infrastructure ---
+      {
+        type: "heading",
+        content: "Cloud Infrastructure and Deployment",
+      },
+      {
+        type: "text",
+        content:
+          "The backend runs on Cloud Run (containerized FastAPI), the frontend on Firebase Hosting. Scene images go to Google Cloud Storage with signed URL fallback. The CI/CD pipeline has four GitHub Actions jobs: backend tests (Python 3.12, pytest with mocked Firebase), frontend tests (eslint, Vite build, Playwright), backend deploy (gcloud run deploy), and frontend deploy (Firebase Hosting). Push to main triggers everything automatically.",
+      },
+      {
+        type: "list",
+        items: [
+          "Per-user circuit breaker: when a user hits their Imagen quota, subsequent calls short-circuit immediately rather than wasting API roundtrips. Jitter on retry delays prevents thundering herd.",
+          "Retry utility with transient error classification, used throughout the Gemini client.",
+          "GCS signed URL fallback when make_public() fails. Atomic usage tracking via Firestore transactions so users don't lose quota on failed generations.",
+          "First-message WebSocket auth: frontend sends the Firebase token as the first WS message after connect, avoiding credential leakage in server logs and browser history.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/images/blog/cloud-infrastructure.svg",
+        alt: "Cloud infrastructure diagram",
+        caption: "Cloud Run + Firebase Hosting + GCS + Firestore",
+      },
+
+      // --- Lessons Learned ---
+      {
+        type: "heading",
+        content: "Lessons Learned",
+      },
+      {
+        type: "list",
+        items: [
+          "Prompt engineering is architecture. The difference between \"write an image prompt\" and our hybrid construction pipeline is the difference between inconsistent images and visual coherence. When your prompt construction has four stages with different temperatures, it's architecture, not a template.",
+          "Use native API features before building workarounds. Our Director Chat initially used 3-5 separate Gemini calls per interaction. Enabling four config options on the Live API eliminated every workaround we'd built.",
+          "Per-scene is the right granularity. Batch-level parallelism feels sequential to the user. Scene-level parallelism (fire off image/audio/commentary as each scene completes) makes the experience feel live. The UX improvement is dramatic.",
+          "Make agents proactive, not just reactive. Our Director started as a purely reactive observer. The breakthrough was giving it a suggestion field that proposes what should happen next, fed to the Narrator at the start of the next scene. A read-only analyst became an active creative partner.",
+          "Voice UX needs silence detection, not button choreography. Web Audio's AnalyserNode was the fix. Detect speech-to-silence transitions, auto-stop the recorder. One tap to start, zero taps after that.",
+          "Flow audits find crashes, code audits find patterns. Our interaction-flow audit caught 9 bugs the code scan would never find. The critical one: silently dropping a Gemini Live API tool call. The protocol requires a FunctionResponse for every tool call. Dropping it corrupted the session permanently.",
+          "Templates are modes, not skins. A Manga template changes the scene composer, activates the text-free defense, adjusts TTS, and shifts the Narrator's tone. When a config option touches four pipeline stages, it's a mode.",
+          "Character consistency requires structural solutions. You can't prompt-engineer your way to consistent characters with a single Gemini call. Separate extraction from composition, prepend descriptions verbatim, use hex color codes, and anchor descriptions to actual rendered portraits via Gemini Vision.",
+        ],
+      },
+
+      // --- Tech Stack ---
       {
         type: "heading",
         content: "Tech Stack",
@@ -868,99 +1164,354 @@ const blogPosts = [
       {
         type: "list",
         items: [
-          "Backend: Python, FastAPI, Google ADK, Gemini 2.0 Flash, Imagen 3, Google Cloud TTS",
-          "Frontend: React, Vite, Tailwind CSS",
-          "Infrastructure: Google Cloud Run, Firebase Hosting, Cloud Firestore, Cloud Storage",
-          "Key APIs: Gemini API, Vertex AI (Imagen 3), Cloud Text-to-Speech",
+          "Frontend: React + CSS (glassmorphism) + Vite (story canvas, director mode, library, explore)",
+          "Real-time: WebSocket (native) for streaming interleaved output",
+          "Backend: Python 3.12 + FastAPI + Uvicorn (WebSocket handler, orchestration)",
+          "Agent Framework: Google ADK (multi-agent orchestration)",
+          "LLM: Gemini 2.0 Flash via Vertex AI (story generation, prompt engineering, analysis)",
+          "Image Gen: Imagen 3 via Vertex AI (scene illustrations, book covers, character portraits)",
+          "Director Chat: Gemini Live API with native audio (real-time voice brainstorming)",
+          "Voice: Web Audio API + Gemini Native Audio (input capture + expressive narration)",
+          "Auth: Firebase Authentication (Google Sign-In)",
+          "Database: Cloud Firestore (story persistence, user libraries, social features)",
+          "Storage: Google Cloud Storage (scene images, cover images)",
+          "Hosting: Cloud Run + Firebase Hosting (containerized deployment)",
+          "CI/CD: GitHub Actions (4-job pipeline: test + deploy)",
         ],
       },
-      {
-        type: "heading",
-        content: "Why Creative Storytelling?",
-      },
-      {
-        type: "text",
-        content:
-          "When I saw the hackathon categories, the Creative Storyteller track clicked immediately. I've always been drawn to projects where technology meets creativity. But beyond personal interest, I thought this was where multimodal AI could really shine. Text-only story generation is a solved problem at this point. The hard part, the interesting part, is orchestrating multiple AI modalities into a single coherent experience. That's what StoryForge tries to do.",
-      },
-      {
-        type: "text",
-        content:
-          "Plus, I knew Director Mode would be a differentiator. Most AI story tools are one-directional: you prompt, it generates, you read. Making it interactive, letting the user become a co-author in real time, felt like a natural extension that most projects wouldn't attempt.",
-      },
-      {
-        type: "heading",
-        content: "The Hard Parts",
-      },
-      {
-        type: "text",
-        content:
-          "I'll be honest, this project humbled me in a few places. Here's what tripped me up:",
-      },
-      {
-        type: "list",
-        items: [
-          "Agent coordination: Getting four agents to work in sequence without stepping on each other was harder than expected. The Story Agent needs to finish a chapter before the Image Agent can generate the illustration, but the Audio Agent can start working on earlier chapters in parallel. Getting this pipeline right took a lot of debugging.",
-          "Image prompt engineering: Imagen 3 is powerful, but getting consistent character appearances across chapters was tricky. A character described in Chapter 1 might look completely different in Chapter 3. I ended up building a character description cache that gets appended to every image prompt.",
-          "WebSocket reliability: WebSocket connections are simple in theory but fragile in practice. Connection drops, buffering issues, and retry logic ate up more time than I'd like to admit.",
-          "Director Mode continuity: When a user makes a dramatic intervention (like changing the genre mid-story), the AI has to reconcile the existing narrative with the new direction. Early versions would just ignore previous plot points. Getting the Director Agent to truly respect what came before while honoring the new direction was the trickiest prompt engineering challenge of the project.",
-        ],
-      },
-      {
-        type: "quote",
-        content:
-          "The Illustrator was generating completely different-looking characters every chapter. The fix? A persistent character sheet that accumulates across story continuations, appended to every image prompt.",
-      },
-      {
-        type: "heading",
-        content: "What I Learned",
-      },
-      {
-        type: "list",
-        items: [
-          "ADK makes multi-agent orchestration genuinely approachable. Before this, I'd been stitching agents together manually with custom code. ADK's structured approach saved me hours.",
-          "Multimodal AI is more than just calling multiple APIs. The real work is in the coordination layer, making sure the outputs feel like they belong together.",
-          "Streaming changes everything about the UX. The difference between waiting 30 seconds for a complete story vs. watching it unfold in real time is enormous. It makes the experience feel alive.",
-          "Start with the hardest problem first. I'm glad I tackled Director Mode early instead of treating it as a nice-to-have. It ended up being the feature that makes StoryForge feel different from other story generators.",
-        ],
-      },
+
+      // --- What's Next ---
       {
         type: "heading",
         content: "What's Next",
       },
       {
-        type: "text",
-        content:
-          "Post-hackathon, I want to push StoryForge further. Some things on my list:",
-      },
-      {
         type: "list",
         items: [
-          "Video generation with Veo 2 for key story moments",
-          "Multiplayer Director Mode where multiple users can co-direct a story",
-          "Story persistence and sharing, so you can save and share your creations",
-          "More genre-specific voice profiles and illustration styles",
+          "Imagen Visual Anchor API (CONTROL_TYPE_FACE_MESH): use the first scene's character render as a reference image for subsequent scenes. The most promising path to true character consistency.",
+          "Cinematic Video Scenes with Veo 2: short video clips for high-tension climax scenes, triggered when the Director's tension_level >= 8.",
+          "Multi-Voice Narration: character-specific voices so dialogue scenes sound like distinct people, mapped from personality traits.",
+          "Floating Director Orb for Mobile: move the canvas voice-reactive orb into a floating FAB with bottom-sheet transcript drawer for natural mobile interaction.",
+        ],
+      },
+
+      // --- Try It ---
+      {
+        type: "heading",
+        content: "Try It",
+      },
+      {
+        type: "text",
+        content:
+          "Reveria was built for the Gemini Live Agent Challenge. The live app is at reveria.web.app and the source code is on GitHub at github.com/Dileep2896/storyforge.",
+      },
+      {
+        type: "callout",
+        content:
+          "Built for the Gemini Live Agent Challenge hackathon (Creative Storyteller Track) using Google's AI technologies including Gemini 2.0 Flash, Imagen 3, Gemini Live API, Gemini Native Audio, and the Agent Development Kit (ADK). #GeminiLiveAgentChallenge",
+      },
+    ],
+  },
+  {
+    slug: "reveria-dev-journey",
+    title:
+      "The Reveria Journey: 65+ Sessions, 3 Rewrites, and a Feature Graveyard",
+    date: "2026-03-14",
+    category: "Hackathon",
+    tags: ["AI", "Gemini", "Hackathon", "Dev Diary", "Debugging", "Architecture"],
+    image: "/images/blog/01-template-chooser.jpg",
+    readTime: 15,
+    excerpt:
+      "The raw dev diary behind Reveria: how a hackathon project evolved through 65+ coding sessions, 3 major rewrites, a feature graveyard, and countless debugging sessions.",
+    github: "https://github.com/Dileep2896/storyforge",
+    devpost: "",
+    demo: "",
+    sections: [
+      {
+        type: "text",
+        content:
+          "How a hackathon project evolved through 65+ coding sessions, 3 major rewrites, and countless \"why isn't this working\" moments.",
+      },
+
+      // --- Day 1 ---
+      {
+        type: "heading",
+        content: "Day 1: Can We Even Do This?",
+      },
+      {
+        type: "text",
+        content:
+          "It started with a question: can you build an AI storybook generator that actually feels like a book? Not a chat interface, not a wall of text. A real, page-turning, illustrated book.",
+      },
+      {
+        type: "text",
+        content:
+          "Session 1 was the usual scaffolding. React + Vite frontend, FastAPI backend, Docker for good measure, a $5 GCP budget cap because hackathons and runaway cloud bills don't mix. The WebSocket echo endpoint worked on the first try. That never happens, so we took it as a good sign.",
+      },
+      {
+        type: "text",
+        content:
+          "Session 2 is where things got exciting. Gemini 2.0 Flash streaming text over WebSocket, split into scenes with [SCENE] markers. The first time a story streamed in, word by word, with the narrator maintaining conversation history so you could say \"make it scarier\" and it would actually continue the same narrative. That moment of seeing it work, genuinely work, is why you do hackathons.",
+      },
+      {
+        type: "text",
+        content:
+          "Session 3 brought Imagen 3 and nearly broke everything. The two-step pipeline seemed elegant on paper. In practice, the character sheet extraction returned wildly different results each time, image prompts were inconsistent, and the 16:9 aspect ratio left black letterboxing edges we had to crop with transform: scale(1.04). But the flipbook worked. react-pageflip with 22 fixed page slots, scene reveal animations, drop-cap typography. It looked like a book.",
+      },
+      {
+        type: "text",
+        content:
+          "Sessions 4-8 were about making it not break. Word limits to keep Gemini from writing novels per scene. Art style pills (only 6 at this point). A cleanup audit that found dead code everywhere, 5 unused dependencies, and 11 print() calls that should have been logging. Book depth shadows for a 3D effect. Page gutter shadows simulating binding darkness. An attempt at spine shadows that looked great until you flipped a page and the shadow stayed floating in mid-air. Reverted.",
+      },
+      {
+        type: "quote",
+        content:
+          "What worked: The core loop. Prompt, stream text, generate images, flip pages. It felt magical even in v0.1. What didn't: Image consistency. Every scene had different-looking characters. We knew this would be a problem. We just didn't know how big.",
+      },
+
+      // --- Day 2 ---
+      {
+        type: "heading",
+        content: "Day 2: The Director Arrives",
+      },
+      {
+        type: "text",
+        content:
+          "Session 9 introduced the Director panel: a structured analysis engine that watched your story and gave feedback. Narrative arc with a mini SVG curve. Character chips. Tension bars with trend arrows. Visual style mood pills. All collapsible, all with shimmer loading states. It was the first feature that made Reveria feel like more than a toy.",
+      },
+      {
+        type: "text",
+        content:
+          "Session 10 tackled image continuity head-on. Characters looked completely different across story continuations because the Illustrator rebuilt its character sheet from scratch each time. The fix: accumulate story text across batches and merge character sheets instead of replacing them. If the extraction failed, keep the old sheet. Simple in retrospect, took hours to debug because the failure mode was subtle: characters would slowly drift rather than obviously break.",
+      },
+
+      // --- Day 3 ---
+      {
+        type: "heading",
+        content: "Day 3: The Firebase Marathon",
+      },
+      {
+        type: "text",
+        content:
+          "Fourteen sessions in one day. This is where it stopped being a demo and became an app.",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "14", label: "Sessions in One Day" },
+          { value: "14", label: "Features Shipped" },
+          { value: "3", label: "Save Flow Tiers" },
+          { value: "1", label: "Very Long Day" },
         ],
       },
       {
-        type: "heading",
-        content: "Try It Out",
+        type: "text",
+        content:
+          "Firebase foundation: Auth with Google Sign-In, Firestore persistence, the save flow with its three tiers (instant if metadata exists, use WebSocket background result if available, call API with spinner as last resort). Library and Explore pages with 3D CSS book cards. Image error handling with specific reasons. Favorites with optimistic Firestore updates. Per-scene actions: regenerate image, regenerate scene, delete scene, each with its own WebSocket message type, backend handler, and loading state.",
       },
       {
         type: "text",
         content:
-          "StoryForge is open source. If you want to check it out, play with it, or build on it, here are the links:",
+          "The kind of bugs you find on marathon days: opening your own completed book from Explore didn't pass the status field, so it defaulted to 'draft' and the book appeared editable. The translateZ(2px) fix for click events inside preserve-3d containers, because 3D CSS and click handlers are not friends. The Library \"New Story\" button that navigated to / without saving the current story.",
+      },
+      {
+        type: "quote",
+        content:
+          "14 features in one day. Each one small, each one necessary, each one with its own edge cases and Firestore indexes and CSS animations. This was the day the codebase stopped being something one person could hold in their head.",
+      },
+
+      // --- Day 4 ---
+      {
+        type: "heading",
+        content: "Day 4: The Image Consistency Breakthrough",
+      },
+      {
+        type: "text",
+        content:
+          "This is the session that changed everything. Characters looked different in every scene, and we finally understood why.",
+      },
+      {
+        type: "text",
+        content:
+          "The root cause: _create_image_prompt() asked Gemini to write a complete image prompt under 100 words. Gemini, being helpful, summarized character descriptions to fit the limit. \"A 23-year-old woman with auburn hair in a loose braid, green eyes, freckled cheeks, wearing a burgundy leather jacket with brass buckles and a silver compass pendant\" became \"woman in dark dress.\" Imagen never saw the details.",
+      },
+      {
+        type: "text",
+        content:
+          "The fix was a hybrid prompt architecture. Split into two stages: identify which characters appear in the scene (tiny Gemini call), then have Gemini write only the scene composition while character descriptions get prepended verbatim from the reference sheet. No summarization. No creative rewriting. The exact character description hits Imagen every time. It sounds obvious now. It took three days to figure out.",
+      },
+
+      // --- Feature Sprint ---
+      {
+        type: "heading",
+        content: "The Feature Sprint",
+      },
+      {
+        type: "text",
+        content:
+          "With image consistency solved, we went on a feature tear. Multi-language support (8 languages with language-specific TTS voices). Reading Mode with word-by-word karaoke narration sync. PDF export with fpdf2. Character portraits via Imagen 3 with Gemini Vision for visual DNA extraction. Content filtering with pre-pipeline Gemini Flash classification. Hex color codes and anti-drift anchors in character sheets.",
+      },
+
+      // --- Feature Graveyard ---
+      {
+        type: "heading",
+        content: "The Feature Graveyard",
+      },
+      {
+        type: "text",
+        content:
+          "Not everything survived. Sometimes the right decision is deleting code you spent days writing.",
       },
       {
         type: "list",
         items: [
-          "GitHub: https://github.com/Dileep2896/storyforge",
+          "Ambient music (built Session 39, removed Session 53): 7 mood-mapped ambient tracks that crossfaded when the Director's mood analysis changed. Web Audio API with AudioContext and GainNode, proportional crossfades, browser autoplay policy workarounds. Nobody noticed it was there. Removed.",
+          "Gemini Live Voice v1 (built Session 41, removed Session 53): Continuous voice conversation for story brainstorming. MediaRecorder streaming 16kHz PCM, backend LiveSession class, auto-fill prompt detection. Too complex for what users actually wanted. The voice feature came back later in a very different form (Director Chat), but this first version was the wrong abstraction.",
+          "Cast Characters / Subject Reference (built across multiple sessions, removed later): Photo upload for character likeness. Vision analysis, Imagen edit_image with subject binding. Likeness quality from Imagen's subject reference was not good enough. Characters looked vaguely similar at best. The entire feature was removed rather than shipping something half-baked.",
+        ],
+      },
+
+      // --- Deep Work ---
+      {
+        type: "heading",
+        content: "Deep Work: Sessions 43-64",
+      },
+      {
+        type: "text",
+        content:
+          "Fewer new features, more structural improvements. The Great Decomposition: seven monolithic files (500-800 lines each) broken into 22 smaller modules, all under 320 lines. SceneCard.jsx went from 782 lines to 128. App.jsx from 557 to 324. Not glamorous work, but the codebase became navigable again.",
+      },
+      {
+        type: "text",
+        content:
+          "Backend resilience: per-user circuit breakers on Imagen, a retry utility with transient error detection, GCS retry with signed URL fallback, atomic usage tracking with Firestore transactions, batched deletions for stories with lots of scenes, TTS silence insertion when a segment fails so audio doesn't just cut out mid-sentence.",
+      },
+      {
+        type: "text",
+        content:
+          "Per-scene streaming: the architecture rewrite that should have been there from day 1. Instead of generating all text, then all images, then all audio in batch, the pipeline now fires tasks per scene as soon as text is ready. Character extraction runs once on the first scene. The perceived latency dropped dramatically because users see images appearing while text is still generating for later scenes.",
+      },
+
+      // --- Interaction-Flow Audit ---
+      {
+        type: "heading",
+        content: "The Interaction-Flow Audit",
+      },
+      {
+        type: "text",
+        content:
+          "Nine bugs found by asking \"what happens if...?\" questions instead of reading code. Walking through every major user flow and thinking about race conditions, disconnects, and state mismatches.",
+      },
+      {
+        type: "list",
+        items: [
+          "The critical one: When generation was already running and the Director issued a generate_story tool call, the tool call was silently dropped without sending a FunctionResponse back to the Gemini Live API. This corrupted the session. The Live API requires a FunctionResponse for every tool call, no exceptions.",
+          "The subtle one: asyncio.CancelledError inherits from BaseException, not Exception. So the except Exception block in handle_generate never caught it. When a WebSocket disconnected during generation, the usage counter was never decremented. Users lost a generation credit for stories they never received.",
+          "The sneaky one: After a story reset, storyIdRef.current becomes null, but scene-scoped WebSocket messages kept arriving and applied their data without checking. Stale data from the old story could leak into the new session.",
+          "Other finds: hero photo analysis blocking the entire WebSocket message loop for 30 seconds, double-click save race conditions, scene busy indicators stuck after reconnect, director live notes accumulating across batches.",
+        ],
+      },
+
+      // --- Director Chat Rewrites ---
+      {
+        type: "heading",
+        content: "Director Chat: Three Rewrites",
+      },
+      {
+        type: "text",
+        content:
+          "Version 1: Separate API calls for everything. send_audio() for the conversation, transcribe_audio() for user speech, another transcribe_audio() for the Director's response, detect_intent() to check generation intent, suggest_prompt() to extract a story prompt. Five API calls per interaction. Slow and expensive.",
+      },
+      {
+        type: "text",
+        content:
+          "Version 2: The rewrite after actually reading the Gemini Live API docs more carefully. Native audio transcription, native function calling for generation intent, context window compression for long sessions. Three to five API calls eliminated per interaction.",
+      },
+      {
+        type: "text",
+        content:
+          "Version 3: VAD (Voice Activity Detection) for natural conversation flow. Web Audio's AnalyserNode computing RMS levels, detecting speech-to-silence transitions, auto-stopping the recorder after 1.2 seconds of quiet. Speak, pause, auto-send, Director responds. No button-pushing required.",
+      },
+      {
+        type: "quote",
+        content:
+          "The manual \"Suggest\" button stayed as a fallback because native tool calling reliability in audio mode hovers around 60-70%. Sometimes the best engineering is admitting the technology isn't reliable enough and building a backup path.",
+      },
+
+      // --- Streaming Audio & Voice Orb ---
+      {
+        type: "heading",
+        content: "Streaming Audio & Voice-Reactive Orb (Sessions 63-64)",
+      },
+      {
+        type: "text",
+        content:
+          "The Director Chat had a noticeable thinking gap. Full audio responses had to be collected, encoded as WAV, and sent as a data URL before playback could start. The fix: stream PCM chunks incrementally. Each chunk is base64-encoded and sent as a WebSocket message. A useStreamingAudio hook on the frontend feeds chunks into Web Audio API AudioBufferSource nodes scheduled for gapless playback. Director voice starts within 200-400ms instead of 1-2 seconds.",
+      },
+      {
+        type: "text",
+        content:
+          "Mute control replaced barge-in: tapping the orb during Director speech stops playback instantly. This proved more reliable than keeping the mic hot during speech, which picked up echo even with echoCancellation enabled.",
+      },
+      {
+        type: "text",
+        content:
+          "The CSS orb became a canvas-based multi-blob visualization. Four overlapping soft blobs blend Dream Violet and Story Amber with heavy gaussian blur, each orbiting independently for organic motion. Real-time amplitude from the mic or streaming audio drives blob size and orbit radius. Asymmetric smoothing (fast attack, slow decay) for organic feel. Six visual modes blending smoothly via per-frame color and speed lerping. The kind of detail that makes voice interaction feel alive instead of mechanical.",
+      },
+
+      // --- The Numbers ---
+      {
+        type: "heading",
+        content: "The Numbers",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "65+", label: "Coding Sessions" },
+          { value: "~60K", label: "Lines of Code" },
+          { value: "3", label: "Major Rewrites" },
+          { value: "3", label: "Features Removed" },
+        ],
+      },
+
+      // --- What We'd Do Differently ---
+      {
+        type: "heading",
+        content: "What We'd Do Differently",
+      },
+      {
+        type: "list",
+        items: [
+          "Start with per-scene streaming from day 1. The batch pipeline was the wrong architecture. We knew it by Session 10 and didn't fix it until Session 54. Forty sessions of working around the wrong abstraction.",
+          "Read the API docs more carefully, earlier. The Gemini Live API had native transcription, tool calling, and context compression the entire time. We built manual versions of all three before discovering the native features existed.",
+          "Build interaction tests before UI. The Session 59 audit found 9 bugs by just thinking through user flows. If we'd written those scenarios as test cases from the start, we would have caught them during development.",
+          "Ship fewer features, polish more. The feature graveyard represents weeks of work that was ultimately deleted. More time on character consistency and the reading experience would have been a better investment.",
+        ],
+      },
+
+      // --- Timeline ---
+      {
+        type: "heading",
+        content: "Timeline",
+      },
+      {
+        type: "list",
+        items: [
+          "Day 1 (Sessions 1-8): Core pipeline, Imagen 3, flipbook, responsive UI, book shadows",
+          "Day 2 (Sessions 9-10): Director panel, structured analysis, image continuity fix",
+          "Day 3 (Sessions 11-24): Firebase, Library, Explore, routing, 14 features in one day",
+          "Day 4 (Sessions 25-42): Hybrid prompts, multi-lang, portraits, reading mode, PDF export",
+          "Day 5 (Sessions 43-49): Decomposition, social features, content filtering, prompt engineering",
+          "Day 6 (Sessions 50-53): Subscription tiers, feature cleanup, author attribution",
+          "Day 7 (Sessions 54-58): Per-scene streaming, Director Chat, native API rewrite",
+          "Day 8 (Sessions 59-62): Interaction audit, visual narratives, cinematic opening, panel redesign",
+          "Day 9 (Sessions 63-65+): Streaming audio, mute control, voice-reactive orb, text input mode, accessibility",
         ],
       },
       {
         type: "callout",
         content:
-          "This project was built for the Gemini API Developer Competition (Gemini Live Agent Challenge) using Google's AI technologies including Gemini 2.0 Flash, Imagen 3, Google Cloud Text-to-Speech, and the Agent Development Kit (ADK). #GeminiLiveAgentChallenge",
+          "Built for the Gemini Live Agent Challenge hackathon. The live app is at reveria.web.app and the source code is on GitHub at github.com/Dileep2896/storyforge.",
       },
     ],
   },
