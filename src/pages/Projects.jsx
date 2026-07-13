@@ -20,25 +20,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Layout order: interleave projects with accent cards to fill gaps
 const gridItems = [
-  // Row 1: two large cards
+  // Hackathon block: large flagship cards
   { type: "project", slug: "reveria" },
+  { type: "project", slug: "protege" },
+  { type: "project", slug: "subrosa" },
+  { type: "project", slug: "visapath" },
+  // Hackathon block: mediums + trophy accent
+  { type: "project", slug: "arbiter" },
+  { type: "project", slug: "promptdeck" },
+  { type: "accent", value: "12x", label: "Hackathon Winner", Icon: FaTrophy, gradient: "from-amber-500/20 to-orange-600/20" },
+  { type: "project", slug: "verigraph" },
+  { type: "project", slug: "unpriced" },
+  // Large cards
   { type: "project", slug: "polychat" },
   { type: "project", slug: "soocily" },
-  // Row 2: three medium + one accent
+  // Mediums + accent
   { type: "project", slug: "interviewer" },
   { type: "project", slug: "good-deeds" },
   { type: "project", slug: "spotify-clone" },
   { type: "accent", value: "50+", label: "Projects Built", Icon: FaRocket, gradient: "from-cyan-500/20 to-blue-600/20" },
-  // Row 3: one large (span 2) + one medium + one accent
+  // One large (span 2) + one medium + one accent
   { type: "project", slug: "tasknexus" },
   { type: "project", slug: "documate" },
   { type: "accent", value: "{ }", label: "Clean Code Enthusiast", Icon: FaCode, gradient: "from-violet-500/20 to-purple-600/20" },
-  // Row 4: three medium + one accent
+  // Three medium
   { type: "project", slug: "gadgetbay" },
   { type: "project", slug: "split" },
   { type: "project", slug: "talkbot" },
-  { type: "accent", value: "12x", label: "Hackathon Winner", Icon: FaTrophy, gradient: "from-amber-500/20 to-orange-600/20" },
-  // Row 5: four small
+  // Four small
   { type: "project", slug: "timer-game" },
   { type: "project", slug: "gymgrit" },
   { type: "project", slug: "flutter-chat-app" },
@@ -137,15 +146,17 @@ const ProjectBentoCard = ({ project, onClick }) => {
 
           {/* Links */}
           <div className="project-card-links">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card-link"
-              onClick={handleLinkClick}
-            >
-              <FaGithub className="text-sm" />
-            </a>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card-link"
+                onClick={handleLinkClick}
+              >
+                <FaGithub className="text-sm" />
+              </a>
+            )}
             {project.demo && (
               <a
                 href={project.demo}
@@ -255,7 +266,7 @@ const Projects = () => {
     <>
       <SEO
         title="Projects"
-        description="Explore 14+ projects built by Dileep Kumar Sharma spanning full-stack web apps, Flutter mobile apps, AI tools, and more."
+        description="Explore 20+ projects built by Dileep Kumar Sharma spanning full-stack web apps, Flutter mobile apps, AI tools, hackathon builds, and more."
         path="/projects"
       />
       <GradientBackground />

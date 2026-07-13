@@ -164,15 +164,19 @@ const ProjectDetail = () => {
                 {tech}
               </span>
             ))}
-            <span className="mx-2 text-white/20">|</span>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white-50 hover:text-white transition-colors flex items-center gap-1.5 text-sm"
-            >
-              <FaGithub className="text-base" /> Source
-            </a>
+            {(project.github || project.demo) && (
+              <span className="mx-2 text-white/20">|</span>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white-50 hover:text-white transition-colors flex items-center gap-1.5 text-sm"
+              >
+                <FaGithub className="text-base" /> Source
+              </a>
+            )}
             {project.demo && (
               <a
                 href={project.demo}
@@ -310,15 +314,17 @@ const ProjectDetail = () => {
                     Live Demo
                   </a>
                 )}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-detail-cta project-detail-cta-secondary"
-                >
-                  <FaGithub className="text-base" />
-                  View on GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-detail-cta project-detail-cta-secondary"
+                  >
+                    <FaGithub className="text-base" />
+                    View on GitHub
+                  </a>
+                )}
               </div>
             </div>
 
