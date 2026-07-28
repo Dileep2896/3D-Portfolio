@@ -68,8 +68,8 @@ const AboutSection = () => {
               real products than any class ever could.
             </p>
             <p className="text-white-50 text-base md:text-lg leading-relaxed">
-              I recently completed my Master's in CS at RIT and spent the
-              last year as a Software Engineer Co-Op at Metis AI. Lately I've
+              I recently completed my Master's in CS at RIT and have been
+              a Founding Engineer at Metis AI since. Lately I've
               been deep in multimodal AI — most recently shipping Reveria, a
               voice-driven storybook generator built on the Gemini Live API,
               Google ADK agents, and Vertex AI Imagen. I love figuring out

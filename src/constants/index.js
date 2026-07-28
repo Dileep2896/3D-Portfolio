@@ -970,7 +970,7 @@ const expCards = [
     review:
       "Metis AI is an industrial AI startup revolutionizing equipment maintenance through intelligent automation, real-time diagnostics, and AI-driven troubleshooting workflows.",
     logoPath: "/images/logo-metis.svg",
-    title: "Software Engineer (Co-Op), Metis AI Inc.",
+    title: "Founding Engineer, Metis AI Inc.",
     date: "Jul 2025 – Present",
     location: "San Francisco, CA",
     responsibilities: [
