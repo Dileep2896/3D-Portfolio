@@ -73,9 +73,10 @@ const AboutSection = () => {
               been deep in multimodal AI — most recently shipping Reveria, a
               voice-driven storybook generator built on the Gemini Live API,
               Google ADK agents, and Vertex AI Imagen. I love figuring out
-              how to make things work well, whether that's a drag-and-drop
-              scheduling system, an offline-first mobile app for field
-              technicians, or a real-time agent pipeline. Hackathons are my
+              how to make things work well, whether that's a design system
+              shared across web and mobile, a React Native app I shipped to
+              the Play Store solo, or a real-time data layer built on
+              WebSockets. Hackathons are my
               thing too — 12 wins and counting.
             </p>
 

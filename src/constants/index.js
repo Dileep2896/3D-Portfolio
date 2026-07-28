@@ -968,20 +968,21 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Metis AI is an industrial AI startup revolutionizing equipment maintenance through intelligent automation, real-time diagnostics, and AI-driven troubleshooting workflows.",
+      "Metis is a seed-stage company turning raw factory production data into decisions manufacturing teams can act on.",
     logoPath: "/images/logo-metis.svg",
     title: "Founding Engineer, Metis AI Inc.",
     date: "Jul 2025 – Present",
-    location: "San Francisco, CA",
+    location: "San Francisco, CA (Remote)",
     responsibilities: [
-      "Architected a modular React and React Native ecosystem enabling real-time equipment telemetry, AI-driven fault diagnosis, and conversational maintenance workflows across web and mobile.",
-      "Engineered an offline-first React Native application for field technicians with bidirectional sync and optimistic UI patterns.",
-      "Designed an AI-augmented drag-and-drop scheduling system with multi-view calendar interfaces and intelligent maintenance summarization.",
+      "Founding engineer and employee number two, reporting directly to the CEO and owning the product surface end to end.",
+      "Built the design system, React web app, and React Native mobile app on a shared monorepo so logic and UI primitives ship once to both platforms instead of twice.",
+      "Shipped the mobile app to Google Play solo, from first commit to store listing, and built the real-time layer on WebSockets so production data lands on screen live.",
+      "Designed the structured response taxonomy for our AI chat interface so model output renders as charts, tables, and cards instead of a wall of text, and drove product direction on what we build, cut, and ship.",
     ],
     metrics: [
-      { value: "3×", label: "Feature Velocity" },
-      { value: "30%", label: "Less Downtime" },
-      { value: "15+", label: "Components Built" },
+      { value: "#2", label: "Employee" },
+      { value: "Solo", label: "Play Store Launch" },
+      { value: "Real-time", label: "WebSocket Data" },
     ],
     icons: [FaRobot, FaCogs, FaMobile],
   },
@@ -1012,7 +1013,7 @@ const expCards = [
     date: "Aug 2022 – Jul 2023",
     location: "Bangalore, India",
     responsibilities: [
-      "Spearheaded a 6-member team to build a unified EV charging app, expanding access by 30%.",
+      "Led a 5-person engineering team to build a unified EV charging app, expanding access by 30%.",
       "Raised $15K and achieved a $1.5M valuation during MVP launch.",
       "Built the app using Flutter, AWS Amplify, and PostgreSQL/PostGIS.",
     ],
